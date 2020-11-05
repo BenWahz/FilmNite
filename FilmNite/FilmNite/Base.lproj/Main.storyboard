@@ -37,6 +37,7 @@
                                 <rect key="frame" x="156" y="496" width="103" height="30"/>
                                 <state key="normal" title="Join Session"/>
                                 <connections>
+                                    <action selector="JoinExistingSession:" destination="BYZ-38-t0r" eventType="touchUpInside" id="35r-UY-Ku0"/>
                                     <segue destination="kcN-EH-nba" kind="show" id="Wv7-ik-QJ3"/>
                                 </connections>
                             </button>
@@ -68,6 +69,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="G0o-8Y-ctq"/>
                     <connections>
+                        <outlet property="SessionID" destination="svv-HV-YAb" id="4GB-bX-xZ6"/>
                         <outlet property="UserName" destination="sty-NW-ErA" id="uDy-DT-Kh8"/>
                     </connections>
                 </viewController>
