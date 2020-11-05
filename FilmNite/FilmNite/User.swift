@@ -17,7 +17,7 @@ class User {
         self.movies = movies
     }
     
-    func addToSession(user: User) {
-        AddUserToSession(user: user)
-    }
+    //func addToSession(user: User) {
+    //    addUserToSession(user: user)
+    //}
 }

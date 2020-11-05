@@ -17,6 +17,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var SessionID: UITextField!
     @IBOutlet weak var UserName: UITextField!
     @IBAction func CreateSession(_ sender: Any) {
+        let movieList = [Movie(ID: 100, title: "test title")]
+        let user = User(username: "testing", movies: movieList)
+        let userList = [user, user]
+        let _ = Session(ID: "1111", users: userList, sessionMovies: movieList)
         
     }
     
