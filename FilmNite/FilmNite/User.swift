@@ -1,20 +1,23 @@
 //
-//  User.swift
+//  Users.swift
 //  FilmNite
 //
-//  Created by Jace on 10/29/20.
+//  Created by Jace on 11/5/20.
 //
 
 import Foundation
 import UIKit
 
 class User {
-    var username: String = ""
-    var name: String = ""
+    var username = ""
+    var movies = [Movie]()
     
-    init(username: String, name:String) {
+    init(username: String, movies: [Movie]) {
         self.username = username
-        self.name = name
+        self.movies = movies
     }
     
+    func addToSession(user: User) {
+        AddUserToSession(user: user)
+    }
 }
