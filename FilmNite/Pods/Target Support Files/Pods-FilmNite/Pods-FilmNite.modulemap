@@ -1,0 +1,6 @@
+framework module Pods_FilmNite {
+  umbrella header "Pods-FilmNite-umbrella.h"
+
+  export *
+  module * { export * }
+}
