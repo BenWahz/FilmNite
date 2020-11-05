@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--EnterSessionScreen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FilmNite" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="EnterSessionScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="FilmNite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,6 +29,7 @@
                                 <rect key="frame" x="156" y="323" width="103" height="30"/>
                                 <state key="normal" title="Create Session"/>
                                 <connections>
+                                    <action selector="CreateSession:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wal-8j-UgP"/>
                                     <segue destination="kcN-EH-nba" kind="show" id="QBL-FD-MWz"/>
                                 </connections>
                             </button>
@@ -66,6 +67,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="G0o-8Y-ctq"/>
+                    <connections>
+                        <outlet property="UserName" destination="sty-NW-ErA" id="uDy-DT-Kh8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
