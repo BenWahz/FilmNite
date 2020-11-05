@@ -27,10 +27,12 @@ func createSession(sessionID: String, users: [User], sessionMovies: [Movie]) {
 }
 
 func addUserToSession(sessionID: String, user: User) {
+    ref = Database.database().reference()
     ref.child(sessionID).child(user.username).setValue(["initial": 0])
 }
 
 func updateUser(sessionID: String, user: User) {
+    ref = Database.database().reference()
     var ct = 0
     for movieID in user.movies {
         ref.child(sessionID).child(user.username).setValue([String(ct): movieID])
