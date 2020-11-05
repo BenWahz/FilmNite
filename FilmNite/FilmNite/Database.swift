@@ -10,14 +10,30 @@ import Firebase
 
 var ref: DatabaseReference!
 
-func createSession(sessionID: String, users: [User], masterMovies: [Movie]) {
+func createSession(sessionID: String, users: [User], sessionMovies: [Movie]) {
     ref = Database.database().reference()
-    ref.setValue([sessionID: array])
-    for movie in masterMovies {
-        ref.child(ID).child("Session Movies").setValue(["movieID": movie.ID])
+    var ct = 0
+    for movie in sessionMovies {
+        ref.child(sessionID).child("Session Movies").setValue([String(ct): movie.ID])
+        ct += 1
+    }
+    ct = 0
+    for user in users {
+        for movieID in user.movies {
+            ref.child(sessionID).child(user.username).setValue([String(ct): movieID])
+            ct += 1
+        }
     }
 }
 
-func AddUserToSession(user: User) {
-    
+func addUserToSession(sessionID: String, user: User) {
+    ref.child(sessionID).child(user.username).setValue(["initial": 0])
+}
+
+func updateUser(sessionID: String, user: User) {
+    var ct = 0
+    for movieID in user.movies {
+        ref.child(sessionID).child(user.username).setValue([String(ct): movieID])
+        ct += 1
+    }
 }

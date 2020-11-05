@@ -6,18 +6,18 @@
 //
 
 import Foundation
-import UIKit
+import UIKit 
 
 class Session {
     var ID = ""
     var users = [User]()
-    var masterMovies = [Movie]()
+    var sessionMovies = [Movie]()
     
-    init(ID: String, users: [User], masterMovies: [Movie]) {
+    init(ID: String, users: [User], sessionMovies: [Movie]) {
         self.ID = ID
         self.users = users
-        self.masterMovies = masterMovies
-        createSession(sessionID: ID, users: users, masterMovies: masterMovies)
+        self.sessionMovies = sessionMovies
+        createSession(sessionID: ID, users: users, sessionMovies: sessionMovies)
     }
     
 }
