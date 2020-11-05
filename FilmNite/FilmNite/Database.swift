@@ -8,6 +8,6 @@
 import Foundation
 import Firebase
 
-//var ref: DatabaseReference!
+var ref: DatabaseReference!
 
 //ref = Database.database().reference()
