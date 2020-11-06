@@ -19,6 +19,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to FilmNite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yw-eA-xBj">
                                 <rect key="frame" x="170" y="196" width="157" height="44"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="157" id="8Gb-HX-ZuP"/>
                                     <constraint firstAttribute="width" secondItem="9yw-eA-xBj" secondAttribute="height" multiplier="138:7" constant="-707.28571428571433" id="ADA-Zt-0Y9"/>
                                     <constraint firstAttribute="width" constant="257" id="cyb-jI-jHb"/>
                                     <constraint firstAttribute="width" secondItem="9yw-eA-xBj" secondAttribute="height" multiplier="257:41" id="lCU-bZ-CGx"/>

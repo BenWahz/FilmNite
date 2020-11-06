@@ -36,6 +36,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func JoinExistingSession(_ sender: Any) {
+        let UName: String = UserName.text!
+        let SessID: String = SessionID.text!
+        let movieList = [Movie(ID: 111, title: "another test title")]
+        let user = User(username: UName, movies: movieList)
+        let _ = addUserToSession(sessionID: SessID, user: user)
     }
     
     func GenerateSessionID(length: Int) -> String{
