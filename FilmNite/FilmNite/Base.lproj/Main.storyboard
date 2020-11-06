@@ -16,24 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome to FilmNite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yw-eA-xBj">
-                                <rect key="frame" x="121" y="196" width="173" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to FilmNite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yw-eA-xBj">
+                                <rect key="frame" x="170" y="196" width="157" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9yw-eA-xBj" secondAttribute="height" multiplier="138:7" constant="-707.28571428571433" id="ADA-Zt-0Y9"/>
+                                    <constraint firstAttribute="width" constant="257" id="cyb-jI-jHb"/>
+                                    <constraint firstAttribute="width" secondItem="9yw-eA-xBj" secondAttribute="height" multiplier="257:41" id="lCU-bZ-CGx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05c-nx-sRU">
-                                <rect key="frame" x="156" y="323" width="103" height="30"/>
-                                <state key="normal" title="Create Session"/>
-                                <connections>
-                                    <action selector="CreateSession:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wal-8j-UgP"/>
-                                    <segue destination="kcN-EH-nba" kind="show" id="QBL-FD-MWz"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDc-Yn-YBw">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDc-Yn-YBw">
                                 <rect key="frame" x="156" y="496" width="103" height="30"/>
                                 <state key="normal" title="Join Session"/>
                                 <connections>
@@ -41,9 +35,8 @@
                                     <segue destination="kcN-EH-nba" kind="show" id="Wv7-ik-QJ3"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Session ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="svv-HV-YAb">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Session ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="svv-HV-YAb">
                                 <rect key="frame" x="162" y="454" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -53,18 +46,30 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05c-nx-sRU">
+                                <rect key="frame" x="156" y="297" width="103" height="30"/>
+                                <state key="normal" title="Create Session"/>
+                                <connections>
+                                    <action selector="CreateSession:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wal-8j-UgP"/>
+                                    <segue destination="kcN-EH-nba" kind="show" id="QBL-FD-MWz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemRedColor"/>
                         <constraints>
-                            <constraint firstItem="05c-nx-sRU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SDc-Yn-YBw" secondAttribute="trailing" constant="8" symbolic="YES" id="9u0-HH-s1b"/>
-                            <constraint firstItem="SDc-Yn-YBw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="331" id="HMb-PP-dg2"/>
-                            <constraint firstItem="SDc-Yn-YBw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="113" id="Iou-9s-MjK"/>
-                            <constraint firstItem="SDc-Yn-YBw" firstAttribute="baseline" secondItem="05c-nx-sRU" secondAttribute="baseline" id="K4V-4G-kjo"/>
+                            <constraint firstItem="svv-HV-YAb" firstAttribute="trailing" secondItem="05c-nx-sRU" secondAttribute="trailing" id="2Xl-Xm-LY9"/>
+                            <constraint firstItem="svv-HV-YAb" firstAttribute="trailing" secondItem="SDc-Yn-YBw" secondAttribute="trailing" id="5vU-g7-QJe"/>
+                            <constraint firstItem="05c-nx-sRU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SDc-Yn-YBw" secondAttribute="trailing" constant="-103" id="9u0-HH-s1b"/>
+                            <constraint firstItem="SDc-Yn-YBw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="496" id="HMb-PP-dg2"/>
+                            <constraint firstItem="SDc-Yn-YBw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="156" id="Iou-9s-MjK"/>
+                            <constraint firstItem="SDc-Yn-YBw" firstAttribute="baseline" secondItem="05c-nx-sRU" secondAttribute="baseline" constant="199" id="K4V-4G-kjo"/>
                             <constraint firstItem="9yw-eA-xBj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="196" id="UCX-2b-Vs3"/>
                             <constraint firstItem="9yw-eA-xBj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="170" id="dWH-IG-nRb"/>
+                            <constraint firstItem="svv-HV-YAb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="162" id="gfN-rI-s56"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9yw-eA-xBj" secondAttribute="trailing" constant="143" id="oCL-NO-R7R"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="05c-nx-sRU" secondAttribute="trailing" constant="131" id="tgh-dM-BWe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="05c-nx-sRU" secondAttribute="trailing" constant="211" id="tgh-dM-BWe"/>
+                            <constraint firstItem="SDc-Yn-YBw" firstAttribute="top" secondItem="svv-HV-YAb" secondAttribute="bottom" constant="8" symbolic="YES" id="yMc-Kn-H0B"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="G0o-8Y-ctq"/>
