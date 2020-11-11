@@ -27,20 +27,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var SessionID: UITextField!
     @IBOutlet weak var UserName: UITextField!
     @IBAction func CreateSession(_ sender: Any) {
-        let UName: String = UserName.text!
-        let movieList = [Movie(ID: 100, title: "test title")]
-        let user = User(username: UName, movies: movieList)
-        let userList = [user, user]
-        let _ = Session(ID: GenerateSessionID(length: 5), users: userList, sessionMovies: movieList)
+        //let UName: String = UserName.text!
+        //let movieList = [Movie(ID: 100, title: "test title")]
+        //let user = User(username: UName, movies: movieList)
+        //let userList = [user, user]
+        //let _ = Session(ID: GenerateSessionID(length: 5), users: userList, sessionMovies: movieList)
+        
+        //getMovies()
+        
         
     }
     
+    
     @IBAction func JoinExistingSession(_ sender: Any) {
-        let UName: String = UserName.text!
-        let SessID: String = SessionID.text!
-        let movieList = [Movie(ID: 111, title: "another test title")]
-        let user = User(username: UName, movies: movieList)
-        let _ = addUserToSession(sessionID: SessID, user: user)
+        //let UName: String = UserName.text!
+        //let SessID: String = SessionID.text!
+        //let movieList = [Movie(ID: 111, title: "another test title")]
+        //let user = User(username: UName, movies: movieList)
+        //let _ = addUserToSession(sessionID: SessID, user: user)
     }
     
     func GenerateSessionID(length: Int) -> String{
