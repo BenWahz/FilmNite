@@ -52,18 +52,25 @@ func getMovies() {
                                         timeoutInterval: 10.0)
     request.httpMethod = "GET"
     request.allHTTPHeaderFields = headers
-
     let session = URLSession.shared
+    var dataTree: [Any] = []
     let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+        //do{
+               //dataTree = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as! [Any]
+                //print(dataTree)
+           // } catch {
+            //    fatalError("json error: \(error)")
+           // }
         if (error != nil) {
-            print(error)
+            print(error!)
         } else {
             let httpResponse = response as? HTTPURLResponse
-            print(httpResponse)
+            print(httpResponse!)
         }
+      
     })
     dataTask.resume()
-    //return data
+    //print(dataTree)
 }
     
 

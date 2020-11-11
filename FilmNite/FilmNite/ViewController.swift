@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         //let userList = [user, user]
         //let _ = Session(ID: GenerateSessionID(length: 5), users: userList, sessionMovies: movieList)
         
-        //getMovies()
+        getMovies()
         
         
     }
