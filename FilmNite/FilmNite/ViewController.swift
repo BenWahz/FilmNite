@@ -56,16 +56,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBOutlet weak var SessionID: UITextField!
     @IBOutlet weak var UserName: UITextField!
+    
     @IBAction func CreateSession(_ sender: Any) {
-        //let UName: String = UserName.text!
-        //let movieList = [Movie(ID: 100, title: "test title")]
-        //let user = User(username: UName, movies: movieList)
-        //let userList = [user, user]
-        //let _ = Session(ID: GenerateSessionID(length: 5), users: userList, sessionMovies: movieList)
-        
-        getMovies()
-        
-        
+        let url = "https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?q=get%3Anew1000-!1900%2C2020-!0%2C5-!0%2C10-!0-!Movie-!English-!Any-!gt1-!%7Bdownloadable%7D&t=ns&cl=78&st=adv&ob=Relevance&p=1&sa=and"
+        let UName: String = UserName.text!
+        let user = User(username: UName)
+        createSession(sessionID: GenerateSessionID(length: 5), users: [user], requestURL: url)
     }
     
     

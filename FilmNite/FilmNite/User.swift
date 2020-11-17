@@ -17,6 +17,11 @@ class User {
         self.movies = movies
     }
     
+    init(username: String) {
+        self.username = username
+        self.movies = [Movie]()
+    }
+    
     //func addToSession(user: User) {
     //    addUserToSession(user: user)
     //}
