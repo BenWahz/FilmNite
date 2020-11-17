@@ -9,15 +9,15 @@ import Foundation
 import Firebase
 
 var ref: DatabaseReference!
-var MasterList = [Movie]()
 
-func createSession(sessionID: String, users: [User], sessionMovies: [Movie]) {
+func createSession(sessionID: String, users: [User], requestURL: String) {
     ref = Database.database().reference()
     var ct = 0
-    for movie in sessionMovies {
-        ref.child(sessionID).child("Session Movies").setValue([String(ct): movie.netflixid])
-        ct += 1
-    }
+    let sessionMovies = getMovies(requestURL: requestURL)
+    //for movie in sessionMovies {
+    ref.child(sessionID).child("Session Movies").setValue(sessionMovies)
+        //ct += 1
+    //}
     ct = 0
     for user in users {
         for movie in user.movies {
@@ -40,69 +40,66 @@ func updateUser(sessionID: String, user: User) {
         ct += 1
     }
 }
-//new from henry
-func parse(json:Data){
-    
-    let decoder = JSONDecoder()
-    
-    if let jsonMovies = try? decoder.decode(MovieList.self, from: json){
-        print("PARSING")
-        MasterList = jsonMovies.items
-    }
-    for movie in MasterList{
-        print(movie.title)
-    }
-}
-func getMovies() {
+
+func getMovies(requestURL: String) -> [Dictionary<String, String>] {
     /// NETFLIX API //////////////////////////////////////////////////////////////////////////////
-    //var MovieList = [Movie]()
+    var movieList = [Dictionary<String, String>]()
     let headers = [
         "x-rapidapi-key": "305c976e8bmshb63b13d0d6334c9p1aaa99jsn0c2f6eeefa67",
         "x-rapidapi-host": "unogs-unogs-v1.p.rapidapi.com"
     ]
-
-    let request = NSMutableURLRequest(url: NSURL(string: "https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?q=get%3Anew1000-!1900%2C2020-!0%2C5-!0%2C10-!0-!Movie-!English-!Any-!gt1-!%7Bdownloadable%7D&t=ns&cl=78&st=adv&ob=Relevance&p=1&sa=and")! as URL,
+    //"https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?q=get%3Anew1000-!1900%2C2020-!0%2C5-!0%2C10-!0-!Movie-!English-!Any-!gt1-!%7Bdownloadable%7D&t=ns&cl=78&st=adv&ob=Relevance&p=1&sa=and"
+    let request = NSMutableURLRequest(url: NSURL(string: requestURL)! as URL,
                                             cachePolicy: .useProtocolCachePolicy,
                                         timeoutInterval: 10.0)
-    
-    
-    
     request.httpMethod = "GET"
     request.allHTTPHeaderFields = headers
-    
-    let urlString = "https://unogs-unogs-v1.p.rapidapi.com/aaapi.cgi?q=get%3Anew1000-!1900%2C2020-!0%2C5-!0%2C10-!0-!Movie-!English-!Any-!gt1-!%7Bdownloadable%7D&t=ns&cl=78&st=adv&ob=Relevance&p=1&sa=and"
-    
-    
+
     let session = URLSession.shared
-    var dataTree = Data()
     let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-        
-        
-        
-        do{
-               dataTree = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as! Data
-                parse(json: dataTree)
-            } catch {
-                fatalError("json error: \(error)")
-            }
         if (error != nil) {
-            print(error!)
+            print(error)
         } else {
             let httpResponse = response as? HTTPURLResponse
-            print(httpResponse!)
+            print(httpResponse)
+            // make sure we got data
+              guard let responseData = data else {
+                print("Error: did not receive data")
+                return
+              }
+                let json = try? JSONSerialization.jsonObject(with: responseData, options: [])
+                
+                if let dictionary = json as? [String: Any] {
+                    if let array = dictionary["ITEMS"] as? [Dictionary<String, String>] {
+                        movieList = array
+//                        for object in array {
+                            //var movie = Movie()
+//                            for (key, value) in object {
+//                                if key == "netflixid" {
+//                                    movie.netflixid = Int(value) ?? -1
+//                                } else if key == "title" {
+//                                    movie.title = value
+//                                } else if key == "image" {
+//                                    movie.image = value
+//                                } else if key == "synopsis" {
+//                                    movie.synopsis = value
+//                                } else if key == "released" {
+//                                    movie.released = Int(value) ?? -1
+//                                } else if key == "rating" {
+//                                    movie.rating = value
+//                                }
+                         //   }
+//                            movieList.append(movie)
+                     //   }
+                    return
+                    } else {
+                        print("Error Accessing Items")
+                    }
+                }
         }
-      
     })
-//    if let url = URL(string: urlString){
-//        if let data = try? Data(contentsOf: url){
-//            print("should parse next")
-//            parse(json: data)
-//
-//        }
-//    }
-    
+    print("-----------------")
+    print(movieList)
+    return movieList
     dataTask.resume()
-    //print(dataTree)
 }
-    
-
