@@ -8,6 +8,7 @@
 import Foundation
 import Firebase
 
+var sessionMovieList = MovieList();
 var ref: DatabaseReference!
 
 func addUserToSession(sessionID: String, user: User) {
@@ -65,71 +66,45 @@ func createSession(sessionID: String, user: User, requestURL: String) {
     })
     ref.child(sessionID).child(user.username).setValue(["initial": 0])
     ref.child(sessionID).child("commonMovies").setValue(["initial": 0])
-    user.movies = getSessionMovies(sessionID: sessionID)
+    getSessionMovies(sessionID: sessionID)
     dataTask.resume()
 }
 
-func getSessionMovies(sessionID: String) -> [Movie] {
-    //ref = Database.database().reference()
-    var movieList = [Movie]()
-    var movie = Movie()
-    
+func getSessionMovies(sessionID: String) {
     let ref = Database.database().reference(withPath: sessionID)
-    let movieRef = ref.child("sessionMovies")
     ref.observe(.value, with: { snapshot in
         // This is the snapshot of the data at the moment in the Firebase database
-        // To get value from the snapshot, we user snapshot.value
-        //in my case the answer is of type array so I can cast it like this, should also work with NSDictionary or NSNumber
         makeMovies(snapshot: snapshot)
-//        let array = snapshot.value as? NSArray
-//        for movie in array! {
-//            for (key, value) in movie as! Dictionary<String, String> {
-//                if key == "netflixid" {
-//                    movie.netflixid = Int(value) ?? -1
-//                } else if key == "title" {
-//                    movie.title = value
-//                } else if key == "image" {
-//                    movie.image = value
-//                } else if key == "synopsis" {
-//                    movie.synopsis = value
-//                } else if key == "released" {
-//                    movie.released = Int(value) ?? -1
-//                } else if key == "rating" {
-//                    movie.rating = value
-//                }
-//            }
-//        }
     })
-    
-    movieList.append(movie)
-    return movieList
 }
 
-func makeMovies(snapshot: DataSnapshot) -> [Movie] {
+func makeMovies(snapshot: DataSnapshot) {
         var movies = [Movie]()
         if let snapshots = snapshot.children.allObjects as? [DataSnapshot] {
             for snap in snapshots {
-                if let postDictionary = snap.value as? Dictionary<String, String> {
-                    let movie = Movie()
-                    for (key, value) in postDictionary {
-                        if key == "netflixid" {
-                            movie.netflixid = Int(value) ?? -1
-                        } else if key == "title" {
-                            movie.title = value
-                        } else if key == "image" {
-                            movie.image = value
-                        } else if key == "synopsis" {
-                            movie.synopsis = value
-                        } else if key == "released" {
-                            movie.released = Int(value) ?? -1
-                        } else if key == "rating" {
-                            movie.rating = value
+                if let postDictionary = snap.value as? [Dictionary<String, String>] {
+                    for movieDict in postDictionary {
+                        let movie = Movie()
+                        for (key, value) in movieDict {
+                            if key == "netflixid" {
+                                movie.netflixid = Int(value) ?? -1
+                            } else if key == "title" {
+                                movie.title = value
+                            } else if key == "image" {
+                                movie.image = value
+                            } else if key == "synopsis" {
+                                movie.synopsis = value
+                            } else if key == "released" {
+                                movie.released = Int(value) ?? -1
+                            } else if key == "rating" {
+                                movie.rating = value
+                            }
                         }
+                        movies.append(movie)
                     }
-                    movies.append(movie)
                 }
             }
         }
-    print(movies)
-    return movies
+    // Set global variable
+    sessionMovieList.movieList = movies
 }
