@@ -7,7 +7,67 @@
 //test; Jack; V2
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+
+
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDataSource, UITableViewDelegate {
+    
+    var genres = ["Action", "Animated", "Comedy", "Drama", "Documentary", "Horror"]
+    var myIndex = 0
+    
+    @IBOutlet weak var genreTable: UITableView!
+    
+    var rowsWhichAreChecked = [NSIndexPath]()
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return genres.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "genreCell",
+            for: indexPath) as? CheckableTableViewCell
+        
+        cell?.textLabel?.text = genres[indexPath.row]
+        
+        return cell!
+    }
+    
+    var lastSelectedIndexPath = NSIndexPath(row: -1, section: 0)
+    private func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+        var whichPortalIsSelected: String = ""
+
+            // Get Cell Label
+        let indexPath = genreTable.indexPathForSelectedRow;
+
+            // Tick the selected row
+        if indexPath!.row != lastSelectedIndexPath.row {
+
+            let newCell = genreTable.cellForRow(at: indexPath!)
+            newCell?.accessoryType = .checkmark
+
+            lastSelectedIndexPath = indexPath! as NSIndexPath
+
+            whichPortalIsSelected = newCell!.textLabel!.text!
+            print("You selected cell #\(lastSelectedIndexPath.row)!") //PPP
+            print("You selected portal #\(whichPortalIsSelected)!") //PPP
+
+            // Un-Tick unselected row
+            } else {
+                let newCell = genreTable.cellForRow(at: indexPath!)
+                newCell?.accessoryType = .none
+
+                whichPortalIsSelected = newCell!.textLabel!.text!
+                print("You unselected cell #\(indexPath!.row)!") //PPP
+                print("You unselected portal #\(whichPortalIsSelected)!") //PPP
+            }
+
+        }
+
+    
     
     
     @IBOutlet weak var startDate: UIPickerView!
@@ -31,7 +91,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         self.endDate?.delegate = self
         self.endDate?.dataSource = self
         
-        pickerData = ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"]
+        self.genreTable?.delegate = self
+        self.genreTable?.dataSource = self
+        self.genreTable?.allowsMultipleSelection = true
+        self.genreTable?.allowsMultipleSelectionDuringEditing = true
+        
+        pickerData = (1900...2020).map { String($0) }
     
     }
     
@@ -46,7 +111,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
     }
-    
     
     
     @objc func dismissKeyboard() {
@@ -80,3 +144,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
 }
 
+class CheckableTableViewCell: UITableViewCell {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.selectionStyle = .none
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        self.accessoryType = selected ? .checkmark : .none
+    }
+}
