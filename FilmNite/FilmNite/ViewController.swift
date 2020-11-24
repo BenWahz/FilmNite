@@ -8,7 +8,16 @@ import UIKit
 
 
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
     
     //genre array
     var genres = ["Action", "Animated", "Comedy", "Drama", "Documentary", "Horror"]
