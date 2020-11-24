@@ -10,13 +10,16 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDataSource, UITableViewDelegate {
     
+    //genre array
     var genres = ["Action", "Animated", "Comedy", "Drama", "Documentary", "Horror"]
     var myIndex = 0
     
+    //genre table view
     @IBOutlet weak var genreTable: UITableView!
     
     var rowsWhichAreChecked = [NSIndexPath]()
     
+    //table view functions
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -68,7 +71,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     
     
-    
+    //start date and end date selection
     @IBOutlet weak var startDate: UIPickerView!
     @IBOutlet weak var endDate: UIPickerView!
     
@@ -99,6 +102,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     }
     
+    //date range picker fucntions
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -143,6 +147,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
 }
 
+//table view function attempt to select table
 class CheckableTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
