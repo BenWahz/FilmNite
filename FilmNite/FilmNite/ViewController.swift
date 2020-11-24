@@ -15,60 +15,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var myIndex = 0
     
     //genre table view
-    @IBOutlet weak var genreTable: UITableView!
+    //@IBOutlet weak var genreTable: UITableView!
     
     var rowsWhichAreChecked = [NSIndexPath]()
     
-    //table view functions
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return genres.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "genreCell",
-            for: indexPath) as? CheckableTableViewCell
-        
-        cell?.textLabel?.text = genres[indexPath.row]
-        
-        return cell!
-    }
-    
-    var lastSelectedIndexPath = NSIndexPath(row: -1, section: 0)
-    private func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
-        var whichPortalIsSelected: String = ""
-
-            // Get Cell Label
-        let indexPath = genreTable.indexPathForSelectedRow;
-
-            // Tick the selected row
-        if indexPath!.row != lastSelectedIndexPath.row {
-
-            let newCell = genreTable.cellForRow(at: indexPath!)
-            newCell?.accessoryType = .checkmark
-
-            lastSelectedIndexPath = indexPath! as NSIndexPath
-
-            whichPortalIsSelected = newCell!.textLabel!.text!
-            print("You selected cell #\(lastSelectedIndexPath.row)!") //PPP
-            print("You selected portal #\(whichPortalIsSelected)!") //PPP
-
-            // Un-Tick unselected row
-            } else {
-                let newCell = genreTable.cellForRow(at: indexPath!)
-                newCell?.accessoryType = .none
-
-                whichPortalIsSelected = newCell!.textLabel!.text!
-                print("You unselected cell #\(indexPath!.row)!") //PPP
-                print("You unselected portal #\(whichPortalIsSelected)!") //PPP
-            }
-
-        }
-
     
     
     //start date and end date selection
@@ -92,11 +43,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         self.endDate?.delegate = self
         self.endDate?.dataSource = self
-        
-        self.genreTable?.delegate = self
-        self.genreTable?.dataSource = self
-        self.genreTable?.allowsMultipleSelection = true
-        self.genreTable?.allowsMultipleSelectionDuringEditing = true
         
         pickerData = (1900...2020).map { String($0) }
     
@@ -147,19 +93,4 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
 }
 
-//table view function attempt to select table
-class CheckableTableViewCell: UITableViewCell {
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.selectionStyle = .none
-    }
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        self.accessoryType = selected ? .checkmark : .none
-    }
-}
