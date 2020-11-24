@@ -10,6 +10,11 @@ import UIKit
 
 class SessionCreatorViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    
+    
+    @IBOutlet weak var numMovies: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
+    
     //start date and end date selection
     @IBOutlet weak var startDate: UIPickerView!
     @IBOutlet weak var endDate: UIPickerView!
@@ -19,6 +24,17 @@ class SessionCreatorViewController: UIViewController, UIPickerViewDelegate, UIPi
     var myIndex = 0
     var rowsWhichAreChecked = [NSIndexPath]()
     var pickerData: [String] = [String]()
+    
+    @IBAction func Next(_ sender: Any) {
+        let numMov: String = numMovies.text!
+        if numMov == "" {
+            errorLabel.text = "Specify number of movies"
+        } else {
+            performSegue(withIdentifier: "nextSegue", sender: nil)
+            errorLabel.text = ""
+        }
+    }
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +51,11 @@ class SessionCreatorViewController: UIViewController, UIPickerViewDelegate, UIPi
         self.endDate?.dataSource = self
         
         pickerData = (1900...2020).map { String($0) }
+        
+        startDate.selectRow(120, inComponent: 0, animated: true)
+        endDate.selectRow(120, inComponent: 0, animated: true)
+        
+        
     }
     
     //date range picker fucntions

@@ -173,9 +173,6 @@
                                 <rect key="frame" x="25" y="794" width="44" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="jJC-Gk-V01"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customize Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kE2-SK-iSL" propertyAccessControl="none">
                                 <rect key="frame" x="95.5" y="20" width="184.5" height="59"/>
@@ -234,21 +231,30 @@
                                 <rect key="frame" x="327" y="617" width="32" height="30"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <segue destination="kDb-et-fSR" kind="show" id="BMp-rz-nIk"/>
+                                    <action selector="Next:" destination="kcN-EH-nba" eventType="touchUpInside" id="iWD-Ff-ZCH"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooD-NM-1gT">
+                                <rect key="frame" x="103" y="129" width="180" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cRn-4c-7Iw" firstAttribute="centerX" secondItem="yBX-AP-Jzq" secondAttribute="centerX" id="511-oF-fx8"/>
                             <constraint firstItem="lVQ-os-5gV" firstAttribute="top" secondItem="cRn-4c-7Iw" secondAttribute="bottom" constant="20" id="8Gf-PJ-Af1"/>
                             <constraint firstItem="kE2-SK-iSL" firstAttribute="centerX" secondItem="lVQ-os-5gV" secondAttribute="centerX" id="9AT-Zt-HtX"/>
+                            <constraint firstItem="ooD-NM-1gT" firstAttribute="leading" secondItem="T4a-JL-qiL" secondAttribute="leading" id="AOY-QK-qqe"/>
                             <constraint firstItem="T4a-JL-qiL" firstAttribute="centerY" secondItem="gTT-eh-Hu9" secondAttribute="centerY" id="BXn-3A-Jd6"/>
+                            <constraint firstItem="ooD-NM-1gT" firstAttribute="trailing" secondItem="gTT-eh-Hu9" secondAttribute="trailing" id="EQD-Wz-4wl"/>
                             <constraint firstItem="kE2-SK-iSL" firstAttribute="centerX" secondItem="yBX-AP-Jzq" secondAttribute="centerX" id="F8z-zL-jan"/>
                             <constraint firstItem="7rf-oe-crd" firstAttribute="baseline" secondItem="ZK8-1n-xRl" secondAttribute="baseline" id="H8o-Lw-eiN"/>
                             <constraint firstItem="Vou-dY-GoI" firstAttribute="leading" secondItem="9Ao-P2-WFB" secondAttribute="trailing" constant="15" id="TX2-Jk-KgQ"/>
                             <constraint firstItem="tub-E5-oCN" firstAttribute="top" secondItem="Zvn-re-Au0" secondAttribute="bottom" constant="147" id="VJx-YY-8Te"/>
                             <constraint firstItem="9Ao-P2-WFB" firstAttribute="leading" secondItem="yBX-AP-Jzq" secondAttribute="leadingMargin" id="VKw-9d-qjA"/>
+                            <constraint firstItem="ooD-NM-1gT" firstAttribute="top" secondItem="T4a-JL-qiL" secondAttribute="bottom" constant="8" symbolic="YES" id="W0D-TC-G4z"/>
                             <constraint firstItem="7rf-oe-crd" firstAttribute="bottom" secondItem="Zvn-re-Au0" secondAttribute="top" id="Wgu-vQ-6FF"/>
                             <constraint firstItem="9Ao-P2-WFB" firstAttribute="centerY" secondItem="Vou-dY-GoI" secondAttribute="centerY" id="XI0-TO-UPp"/>
                             <constraint firstItem="Zvn-re-Au0" firstAttribute="top" secondItem="9Ao-P2-WFB" secondAttribute="bottom" constant="216" id="Xcc-L8-bli"/>
@@ -268,7 +274,10 @@
                     <navigationItem key="navigationItem" id="lO4-IR-pDk"/>
                     <connections>
                         <outlet property="endDate" destination="Vou-dY-GoI" id="kCW-If-3OT"/>
+                        <outlet property="errorLabel" destination="ooD-NM-1gT" id="MOJ-AI-Guq"/>
+                        <outlet property="numMovies" destination="gTT-eh-Hu9" id="qva-MK-47y"/>
                         <outlet property="startDate" destination="9Ao-P2-WFB" id="13m-Cv-27U"/>
+                        <segue destination="kDb-et-fSR" kind="show" identifier="nextSegue" id="IN6-0y-oAC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQk-EZ-nWC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -297,7 +306,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Wv7-ik-QJ3"/>
-        <segue reference="jJC-Gk-V01"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Image" width="120" height="120"/>
