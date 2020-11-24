@@ -9,8 +9,26 @@ import Foundation
 import Firebase
 
 var sessionMovieList = MovieList();
-var ref: DatabaseReference!
+//var ref: DatabaseReference!
 
+
+func checkIfSessionExists(sessionID: String!)
+{
+    ref = Database.database().reference()
+    ref.observeSingleEvent(of: .value, with:{ (snapshot) in
+        if snapshot.hasChild(sessionID){
+            //exists = true
+            print(sessionID + " true - session exist")
+            ///let user = User(username: UName)
+            //addUserToSession(sessionID: sessi, user: user)
+            //self.performSegue(withIdentifier: "joinSessionSegue", sender: self)
+            
+        }else{
+            //exists = false
+            print(sessionID + " False - session DOES NOT exist")
+            //self.errorLabel.text = "Session Does not exist"
+        }
+    })}
 func addUserToSession(sessionID: String, user: User) {
     ref = Database.database().reference()
     ref.child(sessionID).child(user.username).setValue(["initial": 0])
