@@ -8,15 +8,6 @@
 import Foundation
 import UIKit
 
-//struct Movie: Codable {
-//    var netflixid: Int
-//    var title: String
-//    var image: String
-//    var synopsis: String
-//    var year: Int
-//    var rating: Float
-//}
-
 class Movie {
     var netflixid: Int
     var title: String = ""

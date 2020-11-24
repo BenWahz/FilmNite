@@ -17,7 +17,6 @@ class Session {
         self.ID = ID
         self.users = users
         self.sessionMovies = sessionMovies
-        //createSession(sessionID: ID, users: users)
     }
     
 }
