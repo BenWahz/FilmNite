@@ -293,11 +293,39 @@
                         <viewControllerLayoutGuide type="bottom" id="xBu-s8-bAB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JKV-jy-f93">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLj-bS-0Cv">
+                                <rect key="frame" x="22" y="8" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="H7b-T8-8xi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06k-NV-mCG">
+                                <rect key="frame" x="36" y="100" width="303" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="o6o-5p-ziv"/>
+                                </constraints>
+                                <state key="normal" title="Begin Swipe"/>
+                                <connections>
+                                    <action selector="didTapButton" destination="kDb-et-fSR" eventType="touchUpInside" id="ZqU-ok-tRb"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="06k-NV-mCG" firstAttribute="top" secondItem="ICs-li-JfQ" secondAttribute="bottom" constant="100" id="6T6-4a-90N"/>
+                            <constraint firstItem="06k-NV-mCG" firstAttribute="leading" secondItem="JKV-jy-f93" secondAttribute="leadingMargin" constant="20" id="HqV-qx-1eR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="06k-NV-mCG" secondAttribute="trailing" constant="20" id="nvX-LF-P9Z"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="A9P-Od-Kbo"/>
+                    <connections>
+                        <outlet property="startSwipeButton" destination="06k-NV-mCG" id="qqs-LQ-BGY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9o-CH-Yzc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -306,6 +334,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Kgj-Ol-h3R"/>
+        <segue reference="H7b-T8-8xi"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Image" width="120" height="120"/>
