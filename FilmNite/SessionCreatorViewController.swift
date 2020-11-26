@@ -7,8 +7,11 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 class SessionCreatorViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+ 
+    
     
     
     
@@ -25,6 +28,8 @@ class SessionCreatorViewController: UIViewController, UIPickerViewDelegate, UIPi
     var rowsWhichAreChecked = [NSIndexPath]()
     var pickerData: [String] = [String]()
     
+    //this fuction is not doing anything right now
+    //kept as an example for errorhandling for @IBSegueAction func nextSegue
     @IBAction func Next(_ sender: Any) {
         let numMov: String = numMovies.text!
         if numMov == "" {
@@ -34,7 +39,13 @@ class SessionCreatorViewController: UIViewController, UIPickerViewDelegate, UIPi
             errorLabel.text = ""
         }
     }
-        
+    
+    @IBSegueAction func nextSegue(_ coder: NSCoder) -> UIViewController? {
+        return UIHostingController(coder: coder, rootView: SwipeView())
+    }
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

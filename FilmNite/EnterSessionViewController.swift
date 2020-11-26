@@ -8,11 +8,17 @@
 import Foundation
 import UIKit
 import Firebase
+import SwiftUI
 
 var ref: DatabaseReference!
 
 class EnterSessionViewController: UIViewController {
     
+    //test swipe button. use this for buttons later when swipe is working properly
+   
+    @IBSegueAction func swipeSegue(_ coder: NSCoder) -> UIViewController? {
+        return UIHostingController(coder: coder, rootView: SwipeView())
+    }
     @IBOutlet weak var SessionID: UITextField!
     @IBOutlet weak var UserName: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
@@ -57,7 +63,7 @@ class EnterSessionViewController: UIViewController {
                         print("true - session exist")
                         let user = User(username: UName)
                         addUserToSession(sessionID: SessID, user: user)
-                        self.performSegue(withIdentifier: "joinSessionSegue", sender: self)
+                        //self.performSegue(withIdentifier: "swipeSegue()", sender: self)
                         
                     }else{
                         //exists = false

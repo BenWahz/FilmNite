@@ -16,6 +16,8 @@
 		03AB0EE1256D6ED5000EC051 /* SessionCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AB0EE0256D6ED5000EC051 /* SessionCreatorViewController.swift */; };
 		24BCDAA4F4CFE763F7C7DE5C /* Pods_FilmNite_FilmNiteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 859CF60F23CBD978BBE44ECE /* Pods_FilmNite_FilmNiteUITests.framework */; };
 		4E0523F1256E097900A0242C /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0523F0256E097900A0242C /* CardViewController.swift */; };
+		4E052423256EFB2500A0242C /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E052422256EFB2500A0242C /* SwipeView.swift */; };
+		4E052433256F043500A0242C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E052432256F043500A0242C /* Card.swift */; };
 		6063EB79768077A3C25B488E /* Pods_FilmNiteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8438D57E20CDCE84767E80F /* Pods_FilmNiteTests.framework */; };
 		7A6FDF16546CEDFDC691BBAC /* Pods_FilmNite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E25C802C9ABDF4FCE7795EC /* Pods_FilmNite.framework */; };
 		8E3E5BEF25544F8600AA5B6F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E3E5BEE25544F8600AA5B6F /* GoogleService-Info.plist */; };
@@ -60,6 +62,8 @@
 		16B580CA0CD572FB3296C00E /* Pods-FilmNiteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilmNiteTests.debug.xcconfig"; path = "Target Support Files/Pods-FilmNiteTests/Pods-FilmNiteTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3E25C802C9ABDF4FCE7795EC /* Pods_FilmNite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilmNite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E0523F0256E097900A0242C /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		4E052422256EFB2500A0242C /* SwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
+		4E052432256F043500A0242C /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		859CF60F23CBD978BBE44ECE /* Pods_FilmNite_FilmNiteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilmNite_FilmNiteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E3E5BEE25544F8600AA5B6F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "FilmNite/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8E6318B5254B327600DEE8E7 /* FilmNite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilmNite.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,10 +152,12 @@
 				03A0FCA3254B443F0085903C /* Session.swift */,
 				03A0FCA8254B44B90085903C /* Movie.swift */,
 				4E0523F0256E097900A0242C /* CardViewController.swift */,
+				4E052422256EFB2500A0242C /* SwipeView.swift */,
 				8E6318C1254B327800DEE8E7 /* Assets.xcassets */,
 				8E6318C3254B327800DEE8E7 /* LaunchScreen.storyboard */,
 				8E6318C6254B327800DEE8E7 /* Info.plist */,
 				0308CF8025545E38007EC44E /* User.swift */,
+				4E052432256F043500A0242C /* Card.swift */,
 			);
 			path = FilmNite;
 			sourceTree = "<group>";
@@ -442,11 +448,13 @@
 				8E6318B9254B327600DEE8E7 /* AppDelegate.swift in Sources */,
 				03AB0EDC256D6CE3000EC051 /* EnterSessionViewController.swift in Sources */,
 				03A0FCA9254B44B90085903C /* Movie.swift in Sources */,
+				4E052433256F043500A0242C /* Card.swift in Sources */,
 				03A0FC9F254B432D0085903C /* Database.swift in Sources */,
 				03A0FCA4254B443F0085903C /* Session.swift in Sources */,
 				03AB0EE1256D6ED5000EC051 /* SessionCreatorViewController.swift in Sources */,
 				8E6318BB254B327600DEE8E7 /* SceneDelegate.swift in Sources */,
 				4E0523F1256E097900A0242C /* CardViewController.swift in Sources */,
+				4E052423256EFB2500A0242C /* SwipeView.swift in Sources */,
 				03AA2CEC2566E5B600DE51E1 /* MovieList.swift in Sources */,
 				0308CF8125545E38007EC44E /* User.swift in Sources */,
 			);
