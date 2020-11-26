@@ -31,7 +31,8 @@
                                     <color key="titleColor" systemColor="systemGray6Color"/>
                                 </state>
                                 <connections>
-                                    <action selector="JoinExistingSession:" destination="BYZ-38-t0r" eventType="touchUpInside" id="35r-UY-Ku0"/>
+                                    <action selector="JoinExistingSession:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ijY-l9-cMR"/>
+                                    <segue destination="pUI-dj-PQz" kind="show" destinationCreationSelector="NextSegue:" id="F99-xK-KET"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Session ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="svv-HV-YAb">
@@ -150,7 +151,6 @@
                         <outlet property="SessionID" destination="svv-HV-YAb" id="4GB-bX-xZ6"/>
                         <outlet property="UserName" destination="sty-NW-ErA" id="uDy-DT-Kh8"/>
                         <outlet property="errorLabel" destination="64e-ID-iK9" id="elE-2p-PF9"/>
-                        <segue destination="kDb-et-fSR" kind="show" identifier="joinSessionSegue" id="Kgj-Ol-h3R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -231,7 +231,7 @@
                                 <rect key="frame" x="327" y="617" width="32" height="30"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <action selector="Next:" destination="kcN-EH-nba" eventType="touchUpInside" id="iWD-Ff-ZCH"/>
+                                    <segue destination="pUI-dj-PQz" kind="show" destinationCreationSelector="nextSegue:" id="ICT-uH-wqR"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooD-NM-1gT">
@@ -277,35 +277,25 @@
                         <outlet property="errorLabel" destination="ooD-NM-1gT" id="MOJ-AI-Guq"/>
                         <outlet property="numMovies" destination="gTT-eh-Hu9" id="qva-MK-47y"/>
                         <outlet property="startDate" destination="9Ao-P2-WFB" id="13m-Cv-27U"/>
-                        <segue destination="kDb-et-fSR" kind="show" identifier="nextSegue" id="IN6-0y-oAC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQk-EZ-nWC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="949.60000000000002" y="93.103448275862078"/>
         </scene>
-        <!--CardViewController-->
-        <scene sceneID="DTS-jL-hc5">
+        <!--Hosting Controller-->
+        <scene sceneID="9cG-7G-qgg">
             <objects>
-                <viewController title="CardViewController" id="kDb-et-fSR" customClass="CardViewController" customModule="FilmNite" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ICs-li-JfQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="xBu-s8-bAB"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="JKV-jy-f93">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="A9P-Od-Kbo"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a9o-CH-Yzc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <hostingController id="pUI-dj-PQz" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="WPy-A2-xUg"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W7M-KM-Dk2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1807" y="92"/>
+            <point key="canvasLocation" x="2556" y="93"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Kgj-Ol-h3R"/>
+        <segue reference="ICT-uH-wqR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Image" width="120" height="120"/>
