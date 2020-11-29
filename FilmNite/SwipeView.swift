@@ -61,7 +61,7 @@ struct CardView: View{
     @State var card: Card
     var body: some View{
     ZStack(alignment: .topLeading){
-        Image(card.imageName).resizable()
+        Image(card.imageName).resizable().aspectRatio(contentMode: .fit)
        //could add gradient
         VStack{
             Spacer()
