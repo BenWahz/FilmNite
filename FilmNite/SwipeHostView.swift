@@ -11,22 +11,32 @@ import SwiftUI
 
 
 class SwipeHostView : UIViewController{
+
+    @IBOutlet weak var SwipeContainer: UIView!
+    
     private var model = Card(name: "", imageName: "", released: 0, bio: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSwipeView()
-    
+        //addSwipeView()
+        let swipeView = SwipeView()
+        let controller = UIHostingController(rootView: swipeView)
+        addChild(controller)
+        controller.view.frame = SwipeContainer.bounds
+        controller.view.translatesAutoresizingMaskIntoConstraints = false
+        SwipeContainer.addSubview(controller.view)
+        controller.didMove(toParent: self)
     }
 }
 
 private extension SwipeHostView{
     func addSwipeView(){
-        let swipeView = SwipeView(model: model)
+        let swipeView = SwipeView()
         let controller = UIHostingController(rootView: swipeView)
         addChild(controller)
+        controller.view.frame = SwipeContainer.bounds
         controller.view.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(controller.view)
+        SwipeContainer.addSubview(controller.view)
         controller.didMove(toParent: self)
         NSLayoutConstraint.activate([
             controller.view.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),

@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct SwipeView: View{
-    @ObservedObject var model: Card
+    //@ObservedObject
+    private var model = Card(name: "", imageName: "", released: 0, bio: "")
     var body: some View{
         VStack{
             //Top Stack
@@ -20,8 +21,9 @@ struct SwipeView: View{
             ZStack{
                 //THIS IS WHERE DATA FOR CARD NEEDS TO GO
                 
-//                ForEach(Card.data) { card in
-//                CardView(card: card).padding(8)
+                ForEach(Card.data) { card in
+                    CardView(card: card).padding(8)
+                }
             }
             
             }.zIndex(1.0)
@@ -48,11 +50,12 @@ struct SwipeView: View{
    // }
 
 
-//struct SwipeView_Previews: PreviewProvider{
-//    static var previews: some View{
-//        SwipeView(model: Card)
-//    }
-//}
+struct SwipeView_Previews: PreviewProvider{
+    static var previews: some View{
+        //var model =
+        SwipeView()
+    }
+}
 
 struct CardView: View{
     @State var card: Card
