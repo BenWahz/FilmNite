@@ -17,6 +17,7 @@
 		24BCDAA4F4CFE763F7C7DE5C /* Pods_FilmNite_FilmNiteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 859CF60F23CBD978BBE44ECE /* Pods_FilmNite_FilmNiteUITests.framework */; };
 		4E052423256EFB2500A0242C /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E052422256EFB2500A0242C /* SwipeView.swift */; };
 		4E052433256F043500A0242C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E052432256F043500A0242C /* Card.swift */; };
+		4E195317257436520074E802 /* SwipeHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E195316257436510074E802 /* SwipeHostView.swift */; };
 		6063EB79768077A3C25B488E /* Pods_FilmNiteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8438D57E20CDCE84767E80F /* Pods_FilmNiteTests.framework */; };
 		7A6FDF16546CEDFDC691BBAC /* Pods_FilmNite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E25C802C9ABDF4FCE7795EC /* Pods_FilmNite.framework */; };
 		8E3E5BEF25544F8600AA5B6F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E3E5BEE25544F8600AA5B6F /* GoogleService-Info.plist */; };
@@ -62,6 +63,7 @@
 		3E25C802C9ABDF4FCE7795EC /* Pods_FilmNite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilmNite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E052422256EFB2500A0242C /* SwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
 		4E052432256F043500A0242C /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		4E195316257436510074E802 /* SwipeHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeHostView.swift; sourceTree = "<group>"; };
 		859CF60F23CBD978BBE44ECE /* Pods_FilmNite_FilmNiteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilmNite_FilmNiteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E3E5BEE25544F8600AA5B6F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "FilmNite/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8E6318B5254B327600DEE8E7 /* FilmNite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilmNite.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,7 @@
 				8E6318C6254B327800DEE8E7 /* Info.plist */,
 				0308CF8025545E38007EC44E /* User.swift */,
 				4E052432256F043500A0242C /* Card.swift */,
+				4E195316257436510074E802 /* SwipeHostView.swift */,
 			);
 			path = FilmNite;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				03A0FC9F254B432D0085903C /* Database.swift in Sources */,
 				03A0FCA4254B443F0085903C /* Session.swift in Sources */,
 				03AB0EE1256D6ED5000EC051 /* SessionCreatorViewController.swift in Sources */,
+				4E195317257436520074E802 /* SwipeHostView.swift in Sources */,
 				8E6318BB254B327600DEE8E7 /* SceneDelegate.swift in Sources */,
 				4E052423256EFB2500A0242C /* SwipeView.swift in Sources */,
 				03AA2CEC2566E5B600DE51E1 /* MovieList.swift in Sources */,

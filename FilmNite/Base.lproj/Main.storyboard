@@ -31,7 +31,6 @@
                                     <color key="titleColor" systemColor="systemGray6Color"/>
                                 </state>
                                 <connections>
-                                    <action selector="JoinExistingSession:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ijY-l9-cMR"/>
                                     <segue destination="pUI-dj-PQz" kind="show" destinationCreationSelector="swipeSegue:" id="F99-xK-KET"/>
                                 </connections>
                             </button>
@@ -266,7 +265,25 @@
                 </hostingController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W7M-KM-Dk2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3495.1999999999998" y="92.203898050974516"/>
+            <point key="canvasLocation" x="2825" y="84"/>
+        </scene>
+        <!--Swipe Host View-->
+        <scene sceneID="Xqh-yH-l0f">
+            <objects>
+                <viewController id="3hG-9r-XIj" customClass="SwipeHostView" customModule="FilmNite" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="537-D3-3ea"/>
+                        <viewControllerLayoutGuide type="bottom" id="1NU-rC-wJm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GqG-WF-5m6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4St-JK-iWp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3459" y="48"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JyT-Hr-QI9">
