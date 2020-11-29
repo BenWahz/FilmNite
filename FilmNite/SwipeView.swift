@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SwipeView: View{
+
     var body: some View{
         VStack{
             //Top Stack
@@ -24,19 +25,25 @@ struct SwipeView: View{
             
             
             //bottom stack
-            HStack(spacing: 0){
-                Button(action:{}){
-                    Image("dismiss_circle")
-                }
-                
-                Button(action:{}){
-                    Image("like_circle")
-                }
+//            HStack(spacing: 0){
+//
+//                Button(action:{}){
+//                    Image("dismiss_circle")
+//                }
+//
+//                Button(action:{
+//
+//                }){
+//                    Image("like_circle")
+//
+//
+//                    }
+//                }
                 
             }
         }
     }
-}
+
 
 struct SwipeView_Previews: PreviewProvider{
     static var previews: some View{
