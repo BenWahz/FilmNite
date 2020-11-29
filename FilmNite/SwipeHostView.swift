@@ -16,6 +16,7 @@ class SwipeHostView : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         addSwipeView()
+    
     }
 }
 
