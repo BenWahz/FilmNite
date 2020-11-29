@@ -139,9 +139,9 @@
 		8E6318B7254B327600DEE8E7 /* FilmNite */ = {
 			isa = PBXGroup;
 			children = (
-				8E6318B8254B327600DEE8E7 /* AppDelegate.swift */,
 				8E6318BA254B327600DEE8E7 /* SceneDelegate.swift */,
 				8E6318BC254B327600DEE8E7 /* ViewController.swift */,
+				8E6318B8254B327600DEE8E7 /* AppDelegate.swift */,
 				03AB0EE0256D6ED5000EC051 /* SessionCreatorViewController.swift */,
 				8E6318BE254B327600DEE8E7 /* Main.storyboard */,
 				03AB0EDB256D6CE3000EC051 /* EnterSessionViewController.swift */,

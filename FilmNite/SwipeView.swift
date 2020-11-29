@@ -57,7 +57,6 @@ struct CardView: View{
     ZStack(alignment: .topLeading){
         Image(card.imageName).resizable()
        //could add gradient
-        //RoundedRectangle(cornerRadius: 8)
         VStack{
             Spacer()
             VStack(alignment: .leading){

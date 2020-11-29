@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+
 //dummy data for now, figure out how to implement existing data
 struct Card: Identifiable{
     let id = UUID()
@@ -21,7 +22,7 @@ struct Card: Identifiable{
     
     static var data: [Card]{
         [
-        Card(name: "Filler,", imageName: "testSwipe", released: 1999, bio: "I love trying to make this workpls work"),
+        Card(name: "Filler,", imageName: "testSwipe", released: 1999, bio: "I love trying to make this workpls work this is isarah making a really long test for this because i want to see how it will look"),
         Card(name: "movie title, ", imageName: "testSwipe", released: 1999, bio: "I love trying to make 222this workpls work"),
         Card(name: "another,", imageName: "testSwipe", released: 1999, bio: "I love trying to make 222this workpls work")
         ]
