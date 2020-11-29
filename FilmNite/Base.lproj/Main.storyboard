@@ -259,16 +259,6 @@
             </objects>
             <point key="canvasLocation" x="1888.8" y="93.103448275862078"/>
         </scene>
-        <!--Hosting Controller-->
-        <scene sceneID="9cG-7G-qgg">
-            <objects>
-                <hostingController id="pUI-dj-PQz" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="WPy-A2-xUg"/>
-                </hostingController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W7M-KM-Dk2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2825" y="84"/>
-        </scene>
         <!--Swipe Host View-->
         <scene sceneID="Xqh-yH-l0f">
             <objects>
@@ -281,7 +271,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qYI-Ru-Zoe">
+                            <containerView opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="qYI-Ru-Zoe">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="taH-qJ-1GV" kind="embed" id="Mv2-XW-jeR"/>
@@ -303,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4St-JK-iWp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3503" y="93"/>
+            <point key="canvasLocation" x="2737" y="92"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JyT-Hr-QI9">
@@ -328,7 +318,7 @@
         <scene sceneID="5og-Vg-zZS">
             <objects>
                 <viewController id="taH-qJ-1GV" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pbi-oA-hzn">
+                    <view key="view" contentMode="redraw" id="pbi-oA-hzn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -336,7 +326,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qbR-xi-lY8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4318" y="93"/>
+            <point key="canvasLocation" x="2737" y="836"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

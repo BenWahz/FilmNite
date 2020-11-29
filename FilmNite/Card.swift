@@ -16,17 +16,8 @@ struct Card: Identifiable{
     let imageName: String
     let released: Int
     let bio: String
-    //    @Published var name:String
-//    @Published var imageName: String
-//    @Published var released: Int
-//    @Published var bio: String
-//
-//    init(name: String, imageName: String, released: Int, bio: String){
-//        self.name = name
-//        self.imageName = imageName
-//        self.released = released
-//        self.bio = bio
-//    }
+
+
     var x: CGFloat = 0.0
     var y: CGFloat = 0.0
     var degree: Double = 0.0
