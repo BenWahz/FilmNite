@@ -31,7 +31,7 @@
                                     <color key="titleColor" systemColor="systemGray6Color"/>
                                 </state>
                                 <connections>
-                                    <segue destination="pUI-dj-PQz" kind="show" destinationCreationSelector="swipeSegue:" id="F99-xK-KET"/>
+                                    <action selector="JoinExistingSession:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e4U-LS-x1Q"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Session ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="svv-HV-YAb">
@@ -150,6 +150,7 @@
                         <outlet property="SessionID" destination="svv-HV-YAb" id="4GB-bX-xZ6"/>
                         <outlet property="UserName" destination="sty-NW-ErA" id="uDy-DT-Kh8"/>
                         <outlet property="errorLabel" destination="64e-ID-iK9" id="elE-2p-PF9"/>
+                        <segue destination="3hG-9r-XIj" kind="show" identifier="swipeHostSeg" id="WFH-fn-y3s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -210,7 +211,7 @@
                                 <rect key="frame" x="327" y="637" width="32" height="30"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <segue destination="pUI-dj-PQz" kind="show" destinationCreationSelector="nextSegue:" id="ICT-uH-wqR"/>
+                                    <action selector="nextSegue:" destination="kcN-EH-nba" eventType="touchUpInside" id="ASA-4f-zRg"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooD-NM-1gT">
@@ -251,6 +252,7 @@
                         <outlet property="errorLabel" destination="ooD-NM-1gT" id="MOJ-AI-Guq"/>
                         <outlet property="numMovies" destination="gTT-eh-Hu9" id="qva-MK-47y"/>
                         <outlet property="startDate" destination="9Ao-P2-WFB" id="13m-Cv-27U"/>
+                        <segue destination="3hG-9r-XIj" kind="show" identifier="CustomToSwipeHost" id="f4i-Kf-Hho"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQk-EZ-nWC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -280,10 +282,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="LDe-VT-QMb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4St-JK-iWp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3459" y="48"/>
+            <point key="canvasLocation" x="3503" y="93"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JyT-Hr-QI9">
@@ -306,7 +309,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ICT-uH-wqR"/>
+        <segue reference="f4i-Kf-Hho"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Image" width="120" height="120"/>
