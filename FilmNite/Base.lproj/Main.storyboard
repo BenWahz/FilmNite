@@ -280,9 +280,26 @@
                     <view key="view" contentMode="scaleToFill" id="GqG-WF-5m6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qYI-Ru-Zoe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="taH-qJ-1GV" kind="embed" id="Mv2-XW-jeR"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qYI-Ru-Zoe" firstAttribute="centerX" secondItem="GqG-WF-5m6" secondAttribute="centerX" id="BUm-1f-HFQ"/>
+                            <constraint firstItem="qYI-Ru-Zoe" firstAttribute="bottom" secondItem="GqG-WF-5m6" secondAttribute="bottomMargin" id="L3n-Ig-PP5"/>
+                            <constraint firstItem="qYI-Ru-Zoe" firstAttribute="leading" secondItem="GqG-WF-5m6" secondAttribute="leadingMargin" constant="-16" id="Tae-ne-vjD"/>
+                            <constraint firstItem="qYI-Ru-Zoe" firstAttribute="centerY" secondItem="GqG-WF-5m6" secondAttribute="centerY" id="dvU-4o-Dfy"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LDe-VT-QMb"/>
+                    <connections>
+                        <outlet property="SwipeContainer" destination="qYI-Ru-Zoe" id="jDa-dX-5v0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4St-JK-iWp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -307,9 +324,23 @@
             </objects>
             <point key="canvasLocation" x="135.19999999999999" y="92.203898050974516"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="5og-Vg-zZS">
+            <objects>
+                <viewController id="taH-qJ-1GV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pbi-oA-hzn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qbR-xi-lY8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4318" y="93"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="f4i-Kf-Hho"/>
+        <segue reference="WFH-fn-y3s"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Image" width="120" height="120"/>
