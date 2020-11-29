@@ -10,7 +10,6 @@ target 'FilmNite' do
   pod 'Firebase/Core'
   pod 'Firebase/Storage'
   pod 'Firebase/Database'
-  pod 'CardSlider'
   
   target 'FilmNiteTests' do
     inherit! :search_paths
