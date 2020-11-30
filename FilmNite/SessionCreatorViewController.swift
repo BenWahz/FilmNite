@@ -84,6 +84,7 @@ class SessionCreatorViewController: UIViewController, UIPickerViewDelegate, UIPi
             numMovies.text = string
             return false
         }
+        
         return true
     }
     
