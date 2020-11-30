@@ -92,6 +92,7 @@ class EnterSessionViewController: UIViewController {
                         print("true - session exist")
                         let user = User(username: UName)
                         addUserToSession(sessionID: SessID, user: user)
+        
                         self.performSegue(withIdentifier: "swipeHostSeg", sender: self)
 
                     }else{

@@ -24,6 +24,7 @@ struct Card: Identifiable{
     
     
     static var data = MoviesToCards()
+    
 //        let urlYourURL = URL (string: @"home_new.png")
 //        avatarImageView.loadurl(url: urlYourURL!)
         //MoviesToCards()
@@ -31,14 +32,20 @@ struct Card: Identifiable{
 }
 func MoviesToCards() -> [Card] {
     
-    print(sessionMovieList.movieList)
+    //print(returnSessionMovies())
+
+    //wait(w_status: 2)
+    //sleep(4)
+    let movieList = returnSessionMovies()
     var cardArray = [Card]()
-    for movie in sessionMovieList.movieList {
+    for movie in movieList {
         //let urlYourURL = URL (string: movie.image)
         cardArray.append(Card(name: movie.title, imageName: "testSwipe", released: movie.released, bio: movie.synopsis))
     }
-    print(cardArray)
+    //print(cardArray)
     return cardArray
+    
+    
 }
 extension UIImageView {
     func loadurl(url: URL) {

@@ -8,7 +8,7 @@
 import Foundation
 
 class MovieList {
-    var movieList = [Movie]()
+    public var movieList = [Movie]()
 
     init() {
         self.movieList = [Movie]()
