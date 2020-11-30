@@ -22,11 +22,34 @@ struct Card: Identifiable{
     var y: CGFloat = 0.0
     var degree: Double = 0.0
     
-    static var data: [Card]{
-        [
-        Card(name: "Filler,", imageName: "testSwipe", released: 1999, bio: "I love trying to make this workpls work this is isarah making a really long test for this because i want to see how it will look"),
-        Card(name: "movie title, ", imageName: "testSwipe", released: 1999, bio: "I love trying to make 222this workpls work"),
-        Card(name: "another,", imageName: "testSwipe", released: 1999, bio: "I love trying to make 222this workpls work")
-        ]
+    
+    static var data = MoviesToCards()
+//        let urlYourURL = URL (string: @"home_new.png")
+//        avatarImageView.loadurl(url: urlYourURL!)
+        //MoviesToCards()
+    
+}
+func MoviesToCards() -> [Card] {
+    
+    print(sessionMovieList.movieList)
+    var cardArray = [Card]()
+    for movie in sessionMovieList.movieList {
+        //let urlYourURL = URL (string: movie.image)
+        cardArray.append(Card(name: movie.title, imageName: "testSwipe", released: movie.released, bio: movie.synopsis))
+    }
+    print(cardArray)
+    return cardArray
+}
+extension UIImageView {
+    func loadurl(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
     }
 }
