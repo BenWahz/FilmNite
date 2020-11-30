@@ -16,9 +16,36 @@ class EnterSessionViewController: UIViewController {
     
     //test swipe button. use this for buttons later when swipe is working properly
    
-    @IBSegueAction func swipeSegue(_ coder: NSCoder) -> UIViewController? {
-        return UIHostingController(coder: coder, rootView: SwipeView())
-    }
+//    @IBSegueAction func swipeSegue(_ coder: NSCoder) -> UIViewController? {
+//        let UName: String = UserName.text!
+//        let SessID: String = SessionID.text!
+//
+//        if UName == "" {
+//            errorLabel.text = "Please enter username"
+//        } else if SessID == "" {
+//            errorLabel.text = "Please enter session ID"
+//        }else{
+//            //checkIfSessionExists(sessionID: SessID)
+//            //var exists = false;
+//            ref = Database.database().reference()
+//            ref.observeSingleEvent(of: .value, with:{ (snapshot) in
+//                if snapshot.hasChild(SessID){
+//                    //exists = true
+//                    print("true - session exist")
+//                    let user = User(username: UName)
+//                    addUserToSession(sessionID: SessID, user: user)
+//                    //self.performSegue(withIdentifier: "swipeSegue()", sender: self)
+//
+//                }else{
+//                    //exists = false
+//                    print(SessID + "False - session DOES NOT exist")
+//                    self.errorLabel.text = "Session Does not exist"
+//                }
+//            })
+//        }
+//        return UIHostingController(coder: coder, rootView: SwipeView(model:Card))
+//    }
+    
     @IBOutlet weak var SessionID: UITextField!
     @IBOutlet weak var UserName: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
@@ -44,11 +71,13 @@ class EnterSessionViewController: UIViewController {
         }
     }
     
+    
     @IBAction func JoinExistingSession(_ sender: Any) {
             //ref: DatabaseReference!
+
             let UName: String = UserName.text!
             let SessID: String = SessionID.text!
-            
+
             if UName == "" {
                 errorLabel.text = "Please enter username"
             } else if SessID == "" {
@@ -63,8 +92,8 @@ class EnterSessionViewController: UIViewController {
                         print("true - session exist")
                         let user = User(username: UName)
                         addUserToSession(sessionID: SessID, user: user)
-                        //self.performSegue(withIdentifier: "swipeSegue()", sender: self)
-                        
+                        self.performSegue(withIdentifier: "swipeHostSeg", sender: self)
+
                     }else{
                         //exists = false
                         print(SessID + "False - session DOES NOT exist")
@@ -72,11 +101,12 @@ class EnterSessionViewController: UIViewController {
                     }
                 })
             }
-                //        }else if checkIfSessionExists(sessionID: SessID) == true{
-    //            let user = User(username: UName)
-    //            addUserToSession(sessionID: SessID, user: user)
-    //            performSegue(withIdentifier: "joinSessionSegue", sender: self)
-    //        }
+        
+//                        }else if checkIfSessionExists(sessionID: SessID) == true{
+//                let user = User(username: UName)
+//                addUserToSession(sessionID: SessID, user: user)
+//                performSegue(withIdentifier: "joinSessionSegue", sender: self)
+            //}
         }
     
     func GenerateSessionID(length: Int) -> String{

@@ -40,9 +40,12 @@ class SessionCreatorViewController: UIViewController, UIPickerViewDelegate, UIPi
         }
     }
     
-    @IBSegueAction func nextSegue(_ coder: NSCoder) -> UIViewController? {
-        return UIHostingController(coder: coder, rootView: SwipeView())
-    }
+    @IBAction func nextSegue(_ sender: Any) {
+        self.performSegue(withIdentifier: "CustomToSwipeHost", sender: self)
+                }
+   // @IBSegueAction func nextSegue(_ coder: NSrCoder) -> UITableView?{
+        //return UIHostingController(coder: coder, rootView: SwipeView())    }
+   // }
     
     
     

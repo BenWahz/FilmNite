@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct SwipeView: View{
-
+    //@ObservedObject
+    private var model = Card(name: "", imageName: "", released: 0, bio: "")
     var body: some View{
         VStack{
             //Top Stack
@@ -19,22 +20,16 @@ struct SwipeView: View{
             //Card
             ZStack{
                 ForEach(Card.data) { card in
-                CardView(card: card).padding(8)
+                    CardView(card: card).padding(8)
+                }
             }
+            
             }.zIndex(1.0)
             
             
             //bottom stack
 //            HStack(spacing: 0){
 //
-//                Button(action:{}){
-//                    Image("dismiss_circle")
-//                }
-//
-//                Button(action:{
-//
-//                }){
-//                    Image("like_circle")
 //
 //
 //                    }
@@ -42,11 +37,12 @@ struct SwipeView: View{
                 
             }
         }
-    }
+   // }
 
 
 struct SwipeView_Previews: PreviewProvider{
     static var previews: some View{
+        //var model =
         SwipeView()
     }
 }
@@ -56,6 +52,7 @@ struct CardView: View{
     var body: some View{
     ZStack(alignment: .topLeading){
         Image(card.imageName).resizable()
+            //.aspectRatio(contentMode: .fit)
        //could add gradient
         VStack{
             Spacer()
