@@ -19,8 +19,6 @@ struct SwipeView: View{
             
             //Card
             ZStack{
-                //THIS IS WHERE DATA FOR CARD NEEDS TO GO
-                
                 ForEach(Card.data) { card in
                     CardView(card: card).padding(8)
                 }
@@ -32,14 +30,6 @@ struct SwipeView: View{
             //bottom stack
 //            HStack(spacing: 0){
 //
-//                Button(action:{}){
-//                    Image("dismiss_circle")
-//                }
-//
-//                Button(action:{
-//
-//                }){
-//                    Image("like_circle")
 //
 //
 //                    }
@@ -61,7 +51,8 @@ struct CardView: View{
     @State var card: Card
     var body: some View{
     ZStack(alignment: .topLeading){
-        Image(card.imageName).resizable().aspectRatio(contentMode: .fit)
+        Image(card.imageName).resizable()
+            //.aspectRatio(contentMode: .fit)
        //could add gradient
         VStack{
             Spacer()
