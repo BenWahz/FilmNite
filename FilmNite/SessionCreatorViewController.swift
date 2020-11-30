@@ -69,7 +69,22 @@ class SessionCreatorViewController: UIViewController, UIPickerViewDelegate, UIPi
         startDate.selectRow(120, inComponent: 0, animated: true)
         endDate.selectRow(120, inComponent: 0, animated: true)
         
-        
+        numMovies.text = "20"
+    }
+            
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let textFieldString = numMovies.text, let range = Range(range, in: textFieldString) else {
+            return false
+        }
+        let newString = textFieldString.replacingCharacters(in: range, with: string)
+        if newString.isEmpty {
+            numMovies.text = "20"
+            return false
+        } else if textField.text == "20" {
+            numMovies.text = string
+            return false
+        }
+        return true
     }
     
     //date range picker fucntions
