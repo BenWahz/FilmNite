@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SwipeView: View{
     //@ObservedObject
-    private var model = Card(name: "", imageName: "", released: 0, bio: "")
+    private var model = Card(name: "", imageName: "", released: "0", bio: "")
     var body: some View{
         VStack{
             //Top Stack
@@ -51,23 +51,27 @@ struct CardView: View{
     @State var card: Card
     var body: some View{
     ZStack(alignment: .topLeading){
-        Image(card.imageName).resizable()
+        RemoteImage(url: card.imageName)
+            //.resizable()
             //.aspectRatio(contentMode: .fit)
        //could add gradient
         VStack{
             Spacer()
             VStack(alignment: .leading){
                 HStack{
-                    Text(card.name).font(.largeTitle).fontWeight(.bold)
+                    //Text(card.name).font(.largeTitle).fontWeight(.bold)
                     Text(String(card.released)).font(.title)
 
                 }
+                //RoundedRectangle(cornerRadius:4.0)
+                    //.fill(Color.white)
+                    //.frame(width:300,height:100)
                 Text(card.bio)
 
             }
         }
         .padding()
-        .foregroundColor(.white)
+        .foregroundColor(.black)
    
         HStack{
             Image("like")
@@ -117,4 +121,3 @@ struct CardView: View{
     )
     }
 }
-

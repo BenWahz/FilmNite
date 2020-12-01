@@ -14,7 +14,7 @@ class SwipeHostView : UIViewController{
 
     @IBOutlet weak var SwipeContainer: UIView!
     
-    private var model = Card(name: "", imageName: "", released: 0, bio: "")
+    private var model = Card(name: "", imageName: "", released: "0", bio: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,3 @@ class SwipeHostView : UIViewController{
             ])
     }
 }
-
-
-

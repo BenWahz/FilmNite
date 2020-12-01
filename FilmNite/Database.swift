@@ -130,6 +130,18 @@ func makeMovies(snapshot: DataSnapshot) {
     sessionMovieList.movieList = movies
     completedLoad = true
     print("1")
+    //Card(name: "movie title, ", imageName: "testSwipe", released: 1999, bio: "I love trying to make 222this workpls work"),
+    
+    for movie in sessionMovieList.movieList {
+        var string = ""
+        string = "Card("
+        string = string + #"name: ""# + movie.title + #"", "#
+        string = string + #"imageName: ""# + movie.image + #"", "#
+        string = string + #"released: ""# + String(movie.released) + #"", "#
+        string = string + #"bio: ""# + movie.synopsis + #""), "#
+        //print(string)
+    }
+    
 }
 
 func addUserMovie(movie: Movie, sessionID: String, user: User) {
