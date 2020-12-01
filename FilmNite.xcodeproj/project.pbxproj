@@ -160,10 +160,10 @@
 				4E052432256F043500A0242C /* Card.swift */,
 				4E195316257436510074E802 /* SwipeHostView.swift */,
 				0308CF8025545E38007EC44E /* User.swift */,
+				4EAF19562576D8FD0053596A /* CommonMovieTableView.swift */,
 				8E6318C1254B327800DEE8E7 /* Assets.xcassets */,
 				8E6318C3254B327800DEE8E7 /* LaunchScreen.storyboard */,
 				8E6318C6254B327800DEE8E7 /* Info.plist */,
-				4EAF19562576D8FD0053596A /* CommonMovieTableView.swift */,
 			);
 			path = FilmNite;
 			sourceTree = "<group>";

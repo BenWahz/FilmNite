@@ -14,6 +14,7 @@ class SessionCreatorViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     
     
+    @IBOutlet weak var sessionIDLabel: UILabel!
     
     @IBOutlet weak var numMovies: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
@@ -57,7 +58,7 @@ class SessionCreatorViewController: UIViewController, UIPickerViewDelegate, UIPi
         //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
             //tap.cancelsTouchesInView = false
             view.addGestureRecognizer(tap)
-        
+        sessionIDLabel.text = globalSessionID
         self.startDate?.delegate = self
         self.startDate?.dataSource = self
         

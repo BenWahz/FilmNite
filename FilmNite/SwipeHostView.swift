@@ -13,12 +13,14 @@ import SwiftUI
 class SwipeHostView : UIViewController{
 
     @IBOutlet weak var SwipeContainer: UIView!
+    @IBOutlet weak var sessionIDLabel: UILabel!
     
     private var model = Card(name: "", imageName: "", released: "0", bio: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //addSwipeView()
+        sessionIDLabel.text = globalSessionID
         let swipeView = SwipeView()
         let controller = UIHostingController(rootView: swipeView)
         addChild(controller)
@@ -32,5 +34,10 @@ class SwipeHostView : UIViewController{
             controller.view.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             controller.view.centerYAnchor.constraint(equalTo: view.centerYAnchor)
             ])
+    }
+    
+    @IBAction func finishSwiping(_ sender: Any) {
+        print("to common movies...")
+        self.performSegue(withIdentifier: "toCommonMovies", sender: self)
     }
 }
