@@ -51,22 +51,18 @@ struct CardView: View{
     @State var card: Card
     var body: some View{
     ZStack(alignment: .topLeading){
-        RemoteImage(url: card.imageName)
-            //.resizable()
-            //.aspectRatio(contentMode: .fit)
-       //could add gradient
+        RoundedRectangle(cornerRadius:4.0)
+            .fill(Color.black)
+        
         VStack{
-            Spacer()
             VStack(alignment: .leading){
-                HStack{
-                    //Text(card.name).font(.largeTitle).fontWeight(.bold)
-                    Text(String(card.released)).font(.title)
+                Text("Released " + String(card.released)).font(.headline).foregroundColor(.white)
+                
+        }
+        VStack{
+            RemoteImage(url: card.imageName).aspectRatio(contentMode: .fit)
 
-                }
-                //RoundedRectangle(cornerRadius:4.0)
-                    //.fill(Color.white)
-                    //.frame(width:300,height:100)
-                Text(card.bio)
+                Text(card.bio).foregroundColor(.white)
 
             }
         }
@@ -110,6 +106,7 @@ struct CardView: View{
                             card.x = 0; card.degree = 0; card.y = 0
                         case let x where x > 100:
                             card.x = 500; card.degree = 12
+                            //addUserMovie(movie: , sessionID: , user: )
                         case (-100)...(-1):
                             card.x = 0; card.degree = 0; card.y = 0;
                         case let x where x < -100:
