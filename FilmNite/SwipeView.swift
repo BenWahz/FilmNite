@@ -106,11 +106,12 @@ struct CardView: View{
                             card.x = 0; card.degree = 0; card.y = 0
                         case let x where x > 100:
                             card.x = 500; card.degree = 12
-                            //addUserMovie(movie: , sessionID: , user: )
+                            //addUserMovie(movieTitle: card.name)
                         case (-100)...(-1):
                             card.x = 0; card.degree = 0; card.y = 0;
                         case let x where x < -100:
                             card.x = -500; card.degree = -12
+                            updateSessionMovies(movieTitle: card.name)
                         default: card.x = 0; card.y = 0
                     }
                 }

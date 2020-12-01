@@ -22,6 +22,11 @@ class User {
         self.movies = [Movie]()
     }
     
+    init() {
+        self.username = ""
+        self.movies = [Movie]()
+    }
+    
     //func addToSession(user: User) {
     //    addUserToSession(user: user)
     //}

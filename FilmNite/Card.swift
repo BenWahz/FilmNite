@@ -17,7 +17,6 @@ struct Card: Identifiable{
     let released: String
     let bio: String
 
-
     var x: CGFloat = 0.0
     var y: CGFloat = 0.0
     var degree: Double = 0.0

@@ -11,6 +11,8 @@ import Firebase
 var sessionMovieList = MovieList()
 var commonMovieList = MovieList()
 var completedLoad = false
+var globalSessionID = ""
+var globalUser = User()
 //var ref: DatabaseReference!
 
 func checkIfSessionExists(sessionID: String!) {
@@ -35,6 +37,8 @@ func addUserToSession(sessionID: String, user: User) {
     ref = Database.database().reference()
     ref.child(sessionID).child(user.username)
     getSessionMovies(sessionID: sessionID)
+    globalSessionID = sessionID
+    globalUser = user
 }
 
 func updateUser(sessionID: String, user: User) {
@@ -88,6 +92,8 @@ func createSession(sessionID: String, user: User, requestURL: String) {
     ref.child(sessionID).child(user.username)
     ref.child(sessionID).child("commonMovies")
     getSessionMovies(sessionID: sessionID)
+    globalSessionID = sessionID
+    globalUser = user
     dataTask.resume()
 }
 
@@ -144,28 +150,28 @@ func makeMovies(snapshot: DataSnapshot) {
     
 }
 
-func addUserMovie(movie: Movie, sessionID: String, user: User) {
-    ref.child(sessionID).child(user.username).setValue([String(movie.netflixid): movie.netflixid])
-    checkIfCommonMovie(movie: movie, SessID: sessionID, UName: user.username)
+func addUserMovie(movieTitle: String) {
+    ref.child(globalSessionID).child(globalUser.username).setValue([movieTitle: movieTitle])
+    //checkIfCommonMovie(movieTitle: movieTitle)
 }
 
-func checkIfCommonMovie(movie: Movie, SessID: String, UName: String) {
-    ref.child(SessID).child(UName).observeSingleEvent(of: .value, with: { (snapshot) in
+func checkIfCommonMovie(movieTitle: String) {
+    ref.child(globalSessionID).child(globalUser.username).observeSingleEvent(of: .value, with: { (snapshot) in
         // need way to chack all users movies
-        if snapshot.hasChild(String(movie.netflixid)) {
+        if snapshot.hasChild(String(movieTitle)) {
             
         } else {
-            print(SessID + "False - session DOES NOT exist")
+            print(globalSessionID + "False - session DOES NOT exist")
         }
     })
 }
 
-func addCommonMovie(movieID: Int, sessionID: String, username: String) {
-    ref.child(sessionID).child(username).setValue([String(movieID): movieID])
+func addCommonMovie(movieTitle: Int) {
+    ref.child(globalSessionID).child(globalUser.username).setValue(["movieTitle": movieTitle])
 }
 
-func getCommonMovies(sessionID: String) {
-    let path = sessionID + "/commonMovies"
+func getCommonMovies() {
+    let path = globalSessionID + "/commonMovies"
     let ref = Database.database().reference(withPath: path)
     ref.observe(.value, with: { snapshot in
         // This is the snapshot of the data at the moment in the Firebase database
@@ -202,4 +208,17 @@ func returnSessionMovies() -> [Movie] {
     print("2")
     //print(sessionMovieList.movieList)
     return sessionMovieList.movieList
+}
+
+func updateSessionMovies(movieTitle: String) {
+    ref = Database.database().reference()
+    for i in 0...100 {
+        ref.child(globalSessionID).child("sessionMovies").child(String(i)).child("title").observeSingleEvent(of: .value, with:{ (snapshot) in
+            if let title = snapshot.value as? String {
+                if title == movieTitle {
+                    ref.child(globalSessionID).child("sessionMovies").child(String(i)).removeValue()
+                }
+            }
+        })
+    }
 }
