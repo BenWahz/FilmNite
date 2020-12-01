@@ -10,7 +10,7 @@ import UIKit
 
 class CommonMovieTableView: UITableViewController{
     
-    var allMovies = MovieList()
+    var allMovies = [Movie]()
     
     @IBOutlet weak var sessionIDLabel: UILabel!
     
@@ -21,11 +21,12 @@ class CommonMovieTableView: UITableViewController{
         sessionIDLabel.text = globalSessionID
         print("SessionID:" + globalSessionID)
         getSessionMovies(sessionID: globalSessionID)
-        self.allMovies = sessionMovieList
+        self.allMovies = sessionMovieList.movieList
+        print(self.allMovies)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allMovies.movieList.count
+        return allMovies.count
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -35,7 +36,7 @@ class CommonMovieTableView: UITableViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "commonMovieCell", for: indexPath)
-        cell.textLabel?.text = allMovies.movieList[indexPath.row].title
+        cell.textLabel?.text = allMovies[indexPath.row].title
         return cell
     }
 }

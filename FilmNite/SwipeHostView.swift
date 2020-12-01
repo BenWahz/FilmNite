@@ -20,6 +20,8 @@ class SwipeHostView : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         //addSwipeView()
+        getSessionMovies(sessionID: globalSessionID)
+        print(sessionMovieList.movieList)
         sessionIDLabel.text = globalSessionID
         let swipeView = SwipeView()
         let controller = UIHostingController(rootView: swipeView)

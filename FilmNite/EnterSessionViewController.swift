@@ -88,12 +88,13 @@ class EnterSessionViewController: UIViewController {
                 ref = Database.database().reference()
                 ref.observeSingleEvent(of: .value, with:{ (snapshot) in
                     if snapshot.hasChild(SessID){
+                        
                         //exists = true
                         print("true - session exist")
                         let user = User(username: UName)
                         addUserToSession(sessionID: SessID, user: user)
         
-                        self.performSegue(withIdentifier: "swipeHostSeg", sender: self)
+                        self.performSegue(withIdentifier: "joinSessionSeg", sender: self)
 
                     }else{
                         //exists = false

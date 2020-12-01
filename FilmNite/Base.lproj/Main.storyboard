@@ -7,6 +7,39 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Join Session Lobby View-->
+        <scene sceneID="Waj-7L-m9N">
+            <objects>
+                <viewController id="FDa-P4-Yea" customClass="joinSessionLobbyView" customModule="FilmNite" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ABd-QO-1xU"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ej8-01-dfU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DAt-jL-Olh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcw-6H-aH0">
+                                <rect key="frame" x="166" y="143" width="43" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Ready"/>
+                                <connections>
+                                    <action selector="joinCardSwipe:" destination="FDa-P4-Yea" eventType="touchUpInside" id="31l-9L-hQA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8Jd-Ux-wcT"/>
+                    <connections>
+                        <outlet property="joinCardSwipe" destination="kcw-6H-aH0" id="EaV-JJ-3le"/>
+                        <segue destination="3hG-9r-XIj" kind="show" identifier="toCardSwipe" id="tX0-8l-lS6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q1H-lW-dkI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1889" y="835"/>
+        </scene>
         <!--EnterSessionViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -150,12 +183,12 @@
                         <outlet property="SessionID" destination="svv-HV-YAb" id="4GB-bX-xZ6"/>
                         <outlet property="UserName" destination="sty-NW-ErA" id="uDy-DT-Kh8"/>
                         <outlet property="errorLabel" destination="64e-ID-iK9" id="elE-2p-PF9"/>
-                        <segue destination="3hG-9r-XIj" kind="show" identifier="swipeHostSeg" id="WFH-fn-y3s"/>
+                        <segue destination="FDa-P4-Yea" kind="show" identifier="joinSessionSeg" id="ZVA-Ys-Uw7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1074.4000000000001" y="92.203898050974516"/>
+            <point key="canvasLocation" x="956" y="540"/>
         </scene>
         <!--Customize Settings-->
         <scene sceneID="4cv-NU-Ep0">
@@ -426,7 +459,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="f4i-Kf-Hho"/>
+        <segue reference="tX0-8l-lS6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Image" width="120" height="120"/>

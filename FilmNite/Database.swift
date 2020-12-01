@@ -35,7 +35,7 @@ func checkIfSessionExists(sessionID: String!) {
 
 func addUserToSession(sessionID: String, user: User) {
     ref = Database.database().reference()
-    ref.child(sessionID).child(user.username)
+    ref.child(sessionID).child(user.username).setValue("user")
     getSessionMovies(sessionID: sessionID)
     globalSessionID = sessionID
     globalUser = user
@@ -89,7 +89,7 @@ func createSession(sessionID: String, user: User, requestURL: String) {
                 }
         }
     })
-    ref.child(sessionID).child(user.username)
+    ref.child(sessionID).child(user.username).setValue("user")
     ref.child(sessionID).child("commonMovies")
     getSessionMovies(sessionID: sessionID)
     globalSessionID = sessionID
