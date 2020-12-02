@@ -8,14 +8,21 @@
 import Foundation
 import UIKit
 
-class joinSessionLobbyView: UIViewController {
+
+class joinSessionLobbyView: UIViewController{
     
+    @IBAction func join(_ sender: UIButton) {
+        performSegue(withIdentifier: "toCardSwipe", sender: self)
+        
+    }
     override func viewDidLoad()
     {
         super.viewDidLoad()
         //getSessionMovies(sessionID: globalSessionID)
     }
-    @IBAction func joinCardSwipe(_ sender: Any) {
-        self.performSegue(withIdentifier: "toCardSwipe", sender: self)
-    }
+//    @IBAction func joinCardSwipe(_ sender: UIButton) {
+//        self.performSegue(withIdentifier: "toCardSwipe", sender: self)
+//    }
+    
+    
 }

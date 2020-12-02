@@ -24,7 +24,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Ready"/>
                                 <connections>
-                                    <action selector="joinCardSwipe:" destination="FDa-P4-Yea" eventType="touchUpInside" id="31l-9L-hQA"/>
+                                    <action selector="join:" destination="FDa-P4-Yea" eventType="touchUpInside" id="xek-dr-LV9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -32,7 +32,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="8Jd-Ux-wcT"/>
                     <connections>
-                        <outlet property="joinCardSwipe" destination="kcw-6H-aH0" id="EaV-JJ-3le"/>
                         <segue destination="3hG-9r-XIj" kind="show" identifier="toCardSwipe" id="tX0-8l-lS6"/>
                     </connections>
                 </viewController>
