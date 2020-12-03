@@ -34,6 +34,7 @@
 		8E6318C5254B327800DEE8E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E6318C3254B327800DEE8E7 /* LaunchScreen.storyboard */; };
 		8E6318D0254B327900DEE8E7 /* FilmNiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6318CF254B327900DEE8E7 /* FilmNiteTests.swift */; };
 		8E6318DB254B327900DEE8E7 /* FilmNiteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6318DA254B327900DEE8E7 /* FilmNiteUITests.swift */; };
+		9859FF27257861920091C026 /* CommonMoviesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9859FF26257861920091C026 /* CommonMoviesDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		8E6318D6254B327900DEE8E7 /* FilmNiteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilmNiteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E6318DA254B327900DEE8E7 /* FilmNiteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmNiteUITests.swift; sourceTree = "<group>"; };
 		8E6318DC254B327900DEE8E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9859FF26257861920091C026 /* CommonMoviesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonMoviesDetailView.swift; sourceTree = "<group>"; };
 		9D1D2484B1A2A54773AD4FBE /* Pods-FilmNite-FilmNiteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilmNite-FilmNiteUITests.release.xcconfig"; path = "Target Support Files/Pods-FilmNite-FilmNiteUITests/Pods-FilmNite-FilmNiteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A2156F374751B353EE6F43C2 /* Pods-FilmNite-FilmNiteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilmNite-FilmNiteUITests.debug.xcconfig"; path = "Target Support Files/Pods-FilmNite-FilmNiteUITests/Pods-FilmNite-FilmNiteUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AAE94EBF30FA7453072FF0B1 /* Pods-FilmNite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilmNite.release.xcconfig"; path = "Target Support Files/Pods-FilmNite/Pods-FilmNite.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,23 +149,24 @@
 		8E6318B7254B327600DEE8E7 /* FilmNite */ = {
 			isa = PBXGroup;
 			children = (
-				8E6318BA254B327600DEE8E7 /* SceneDelegate.swift */,
-				8E6318BC254B327600DEE8E7 /* ViewController.swift */,
 				8E6318B8254B327600DEE8E7 /* AppDelegate.swift */,
-				03AB0EE0256D6ED5000EC051 /* SessionCreatorViewController.swift */,
-				8E6318BE254B327600DEE8E7 /* Main.storyboard */,
-				8E51A5C025770B1D00E9373C /* joinSessionLobbyView.swift */,
-				03AB0EDB256D6CE3000EC051 /* EnterSessionViewController.swift */,
-				03A0FC9E254B432D0085903C /* Database.swift */,
-				03AA2CEB2566E5B600DE51E1 /* MovieList.swift */,
-				03A0FCA3254B443F0085903C /* Session.swift */,
-				03A0FCA8254B44B90085903C /* Movie.swift */,
-				4E052422256EFB2500A0242C /* SwipeView.swift */,
-				0330F52F2576D017001677DE /* RemoteImage.swift */,
 				4E052432256F043500A0242C /* Card.swift */,
-				4E195316257436510074E802 /* SwipeHostView.swift */,
-				0308CF8025545E38007EC44E /* User.swift */,
+				9859FF26257861920091C026 /* CommonMoviesDetailView.swift */,
 				4EAF19562576D8FD0053596A /* CommonMovieTableView.swift */,
+				03A0FC9E254B432D0085903C /* Database.swift */,
+				03AB0EDB256D6CE3000EC051 /* EnterSessionViewController.swift */,
+				8E51A5C025770B1D00E9373C /* joinSessionLobbyView.swift */,
+				8E6318BE254B327600DEE8E7 /* Main.storyboard */,
+				03A0FCA8254B44B90085903C /* Movie.swift */,
+				03AA2CEB2566E5B600DE51E1 /* MovieList.swift */,
+				0330F52F2576D017001677DE /* RemoteImage.swift */,
+				8E6318BA254B327600DEE8E7 /* SceneDelegate.swift */,
+				03A0FCA3254B443F0085903C /* Session.swift */,
+				03AB0EE0256D6ED5000EC051 /* SessionCreatorViewController.swift */,
+				4E195316257436510074E802 /* SwipeHostView.swift */,
+				4E052422256EFB2500A0242C /* SwipeView.swift */,
+				8E6318BC254B327600DEE8E7 /* ViewController.swift */,
+				0308CF8025545E38007EC44E /* User.swift */,
 				8E6318C1254B327800DEE8E7 /* Assets.xcassets */,
 				8E6318C3254B327800DEE8E7 /* LaunchScreen.storyboard */,
 				8E6318C6254B327800DEE8E7 /* Info.plist */,
@@ -458,6 +461,7 @@
 				03AB0EDC256D6CE3000EC051 /* EnterSessionViewController.swift in Sources */,
 				4EAF19572576D8FD0053596A /* CommonMovieTableView.swift in Sources */,
 				03A0FCA9254B44B90085903C /* Movie.swift in Sources */,
+				9859FF27257861920091C026 /* CommonMoviesDetailView.swift in Sources */,
 				4E052433256F043500A0242C /* Card.swift in Sources */,
 				03A0FC9F254B432D0085903C /* Database.swift in Sources */,
 				03A0FCA4254B443F0085903C /* Session.swift in Sources */,
