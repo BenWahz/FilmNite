@@ -7,42 +7,26 @@
 
 import SwiftUI
 
-struct SwipeView: View{
+struct SwipeView: View {
     //@ObservedObject
     private var model = Card(name: "", imageName: "", released: "0", bio: "")
-    var body: some View{
+    var body: some View {
         VStack{
             //Top Stack
             HStack{
-//                do i need top stack??
             }
-            
             //Card
             ZStack{
                 ForEach(Card.data) { card in
                     CardView(card: card).padding(8)
                 }
             }
-            
             }.zIndex(1.0)
-            
-            
-            //bottom stack
-//            HStack(spacing: 0){
-//
-//
-//
-//                    }
-//                }
-                
             }
         }
-   // }
-
 
 struct SwipeView_Previews: PreviewProvider{
     static var previews: some View{
-        //var model =
         SwipeView()
     }
 }
@@ -53,17 +37,13 @@ struct CardView: View{
     ZStack(alignment: .topLeading){
         RoundedRectangle(cornerRadius:4.0)
             .fill(Color.black)
-        
         VStack{
             VStack(alignment: .leading){
                 Text("Released " + String(card.released)).font(.headline).foregroundColor(.white)
-                
         }
         VStack{
             RemoteImage(url: card.imageName).aspectRatio(contentMode: .fit)
-
                 Text(card.bio).foregroundColor(.white)
-
             }
         }
         .padding()
@@ -82,7 +62,6 @@ struct CardView: View{
                 .frame(width: 150)
                 .opacity(Double(card.x/10 * -1 - 1)) //if its positive then it is disliked. Use this for commonalitiees probs
         }
-    
     }
     .cornerRadius(8)
     .offset(x: card.x, y: card.y)

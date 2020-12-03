@@ -3,7 +3,7 @@
 //  FilmNite
 //
 //  Created by user180592 on 10/29/20.
-// test:jace
+//
 
 import UIKit
 
@@ -46,6 +46,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
 }
-

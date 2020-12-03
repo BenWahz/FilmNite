@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class User {
+    
     var username = ""
     var movies = [Movie]()
     
@@ -27,7 +28,4 @@ class User {
         self.movies = [Movie]()
     }
     
-    //func addToSession(user: User) {
-    //    addUserToSession(user: user)
-    //}
 }

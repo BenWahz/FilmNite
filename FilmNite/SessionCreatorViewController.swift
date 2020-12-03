@@ -11,9 +11,6 @@ import SwiftUI
 
 class SessionCreatorViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
  
-    
-    
-    
     @IBOutlet weak var sessionIDLabel: UILabel!
     
     @IBOutlet weak var numMovies: UITextField!
@@ -43,14 +40,8 @@ class SessionCreatorViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     @IBAction func nextSegue(_ sender: Any) {
         self.performSegue(withIdentifier: "CustomToSwipeHost", sender: self)
-                }
-   // @IBSegueAction func nextSegue(_ coder: NSrCoder) -> UITableView?{
-        //return UIHostingController(coder: coder, rootView: SwipeView())    }
-   // }
-    
-    
-    
-    
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -85,7 +76,6 @@ class SessionCreatorViewController: UIViewController, UIPickerViewDelegate, UIPi
             numMovies.text = string
             return false
         }
-        
         return true
     }
     
@@ -102,7 +92,6 @@ class SessionCreatorViewController: UIViewController, UIPickerViewDelegate, UIPi
         return pickerData[row]
     }
     
-    
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
@@ -114,15 +103,11 @@ class SessionCreatorViewController: UIViewController, UIPickerViewDelegate, UIPi
         return genres.count
     }
 
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
         cell.textLabel?.text = genres[indexPath.row]
-        
         // Configure the cell...
-
         return cell
     }
     

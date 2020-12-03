@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 import SwiftUI
 
-
 class SwipeHostView : UIViewController{
 
     @IBOutlet weak var SwipeContainer: UIView!

@@ -61,5 +61,4 @@ class CommonMovieTableView: UITableViewController {
         return cell
     }
     
-    
 }

@@ -10,7 +10,6 @@ import Firebase
 
 var sessionMovieList = MovieList()
 var commonMovieList = MovieList()
-var completedLoad = false
 var globalSessionID = ""
 var globalUser = User()
 //var ref: DatabaseReference!
@@ -19,16 +18,9 @@ func checkIfSessionExists(sessionID: String!) {
     ref = Database.database().reference()
     ref.observeSingleEvent(of: .value, with:{ (snapshot) in
         if snapshot.hasChild(sessionID){
-            //exists = true
             print(sessionID + " true - session exists")
-            ///let user = User(username: UName)
-            //addUserToSession(sessionID: sessi, user: user)
-            //self.performSegue(withIdentifier: "joinSessionSegue", sender: self)
-            
         } else {
-            //exists = false
             print(sessionID + " False - session DOES NOT exist")
-            //self.errorLabel.text = "Session Does not exist"
         }
     })
 }
@@ -53,7 +45,6 @@ func updateUser(sessionID: String, user: User) {
 func createSession(sessionID: String, user: User, requestURL: String) {
     ref = Database.database().reference()
     /// NETFLIX API //////////////////////////////////////////////////////////////////////////////
-    //var movieList = [Dictionary<String, String>]()
     let headers = [
         "x-rapidapi-key": "305c976e8bmshb63b13d0d6334c9p1aaa99jsn0c2f6eeefa67",
         "x-rapidapi-host": "unogs-unogs-v1.p.rapidapi.com"
@@ -134,10 +125,7 @@ func makeMovies(snapshot: DataSnapshot) {
         }
     // Set global variable
     sessionMovieList.movieList = movies
-    completedLoad = true
-    print("1")
-    //Card(name: "movie title, ", imageName: "testSwipe", released: 1999, bio: "I love trying to make 222this workpls work"),
-    
+
     for movie in sessionMovieList.movieList {
         var string = ""
         string = "Card("
@@ -205,8 +193,6 @@ func buildCommonMovieList(snapshot: DataSnapshot) {
 }
 
 func returnSessionMovies() -> [Movie] {
-    print("2")
-    //print(sessionMovieList.movieList)
     return sessionMovieList.movieList
 }
 

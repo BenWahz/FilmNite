@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 class joinSessionLobbyView: UIViewController{
     
     @IBAction func join(_ sender: UIButton) {
@@ -20,9 +19,5 @@ class joinSessionLobbyView: UIViewController{
         super.viewDidLoad()
         //getSessionMovies(sessionID: globalSessionID)
     }
-//    @IBAction func joinCardSwipe(_ sender: UIButton) {
-//        self.performSegue(withIdentifier: "toCardSwipe", sender: self)
-//    }
-    
-    
+
 }

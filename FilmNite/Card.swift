@@ -21,26 +21,19 @@ struct Card: Identifiable{
     var y: CGFloat = 0.0
     var degree: Double = 0.0
     
-    
     static var data = MoviesToCards()
 }
+
 func MoviesToCards() -> [Card] {
-
-    //print(returnSessionMovies())
-
-    //wait(w_status: 2)
-    //sleep(4)
     let movieList = returnSessionMovies()
     var cardArray = [Card]()
     for movie in movieList {
         //let urlYourURL = URL (string: movie.image)
         cardArray.append(Card(name: movie.title, imageName: movie.image, released: String(movie.released), bio: movie.synopsis))
     }
-    //print(cardArray)
     return cardArray
-
-
 }
+
 extension UIImageView {
     func loadurl(url: URL) {
         DispatchQueue.global().async { [weak self] in

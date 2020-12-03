@@ -14,38 +14,6 @@ var ref: DatabaseReference!
 
 class EnterSessionViewController: UIViewController {
     
-    //test swipe button. use this for buttons later when swipe is working properly
-   
-//    @IBSegueAction func swipeSegue(_ coder: NSCoder) -> UIViewController? {
-//        let UName: String = UserName.text!
-//        let SessID: String = SessionID.text!
-//
-//        if UName == "" {
-//            errorLabel.text = "Please enter username"
-//        } else if SessID == "" {
-//            errorLabel.text = "Please enter session ID"
-//        }else{
-//            //checkIfSessionExists(sessionID: SessID)
-//            //var exists = false;
-//            ref = Database.database().reference()
-//            ref.observeSingleEvent(of: .value, with:{ (snapshot) in
-//                if snapshot.hasChild(SessID){
-//                    //exists = true
-//                    print("true - session exist")
-//                    let user = User(username: UName)
-//                    addUserToSession(sessionID: SessID, user: user)
-//                    //self.performSegue(withIdentifier: "swipeSegue()", sender: self)
-//
-//                }else{
-//                    //exists = false
-//                    print(SessID + "False - session DOES NOT exist")
-//                    self.errorLabel.text = "Session Does not exist"
-//                }
-//            })
-//        }
-//        return UIHostingController(coder: coder, rootView: SwipeView(model:Card))
-//    }
-    
     @IBOutlet weak var SessionID: UITextField!
     @IBOutlet weak var UserName: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
@@ -71,10 +39,7 @@ class EnterSessionViewController: UIViewController {
         }
     }
     
-    
     @IBAction func JoinExistingSession(_ sender: Any) {
-            //ref: DatabaseReference!
-
             let UName: String = UserName.text!
             let SessID: String = SessionID.text!
 
@@ -82,40 +47,27 @@ class EnterSessionViewController: UIViewController {
                 errorLabel.text = "Please enter username"
             } else if SessID == "" {
                 errorLabel.text = "Please enter session ID"
-            }else{
-                //checkIfSessionExists(sessionID: SessID)
-                //var exists = false;
+            } else {
                 ref = Database.database().reference()
                 ref.observeSingleEvent(of: .value, with:{ (snapshot) in
-                    if snapshot.hasChild(SessID){
-                        
-                        //exists = true
+                    if snapshot.hasChild(SessID) {
                         print("true - session exist")
                         let user = User(username: UName)
                         addUserToSession(sessionID: SessID, user: user)
-        
                         self.performSegue(withIdentifier: "joinSessionSeg", sender: self)
 
-                    }else{
-                        //exists = false
+                    } else {
                         print(SessID + "False - session DOES NOT exist")
                         self.errorLabel.text = "Session Does not exist"
                     }
                 })
             }
-        
-//                        }else if checkIfSessionExists(sessionID: SessID) == true{
-//                let user = User(username: UName)
-//                addUserToSession(sessionID: SessID, user: user)
-//                performSegue(withIdentifier: "joinSessionSegue", sender: self)
-            //}
-        }
+    }
     
-    func GenerateSessionID(length: Int) -> String{
+    func GenerateSessionID(length: Int) -> String {
         let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
           return String((0..<length).map{ _ in letters.randomElement()! })
     }
-    
     
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
@@ -123,6 +75,3 @@ class EnterSessionViewController: UIViewController {
     }
     
 }
-    
-    
-
